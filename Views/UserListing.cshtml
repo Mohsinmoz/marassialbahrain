@@ -1,0 +1,243 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using MarassiAlBahrain.Shared;
+@using MarassiAlBahrain.Model;
+@{
+    ViewBag.Title = "Marassi Al Bahrain - User Listing";
+    Layout = "AdminMaster.cshtml";
+
+    if (Helper.GetSession() == null)
+    {
+        HttpContext.Current.Session["LoginState"] = null;
+        Response.Redirect(Settings.LoginIPublished.Url);
+    }
+
+    List<SelectListItem> countries = TempData["CountryList"] as List<SelectListItem>;
+    List<SelectListItem> ddlPagination = TempData["Pagination"] as List<SelectListItem>;
+    List<SelectListItem> ddlStatus = TempData["Status"] as List<SelectListItem>;
+    int statusValue = Convert.ToInt32(TempData["StatusValue"]);
+    string keyword = Convert.ToString(TempData["keyword"]);
+    string message = TempData["Message"] as string;
+    TempData["Message"] = null;
+
+
+
+
+    var userList = (IEnumerable<MarassiAlBahrain.Model.User>)TempData["UserListing"];
+
+}
+@Html.Partial("_Navigation")
+<div id="Content">
+
+    <h1>List of Users</h1>
+    <div id="validationMessage" style="display:@(!string.IsNullOrEmpty(message) ? "block;" : "none;" )" class="MessageDefault green-bg">@message<i class="icon-remove icon-2x close right"></i></div>
+    <label class="custom-filter-label">Filters</label>
+    @Html.DropDownList("Text", countries, new { @id = "country", @name = "country", @style = "width: 280px;height: 30px;" })
+    @Html.DropDownList("Value", ddlStatus, new { @id = "status", @name = "status", @style = "width: 150px;height: 30px;" })
+    @Html.TextBox("search", keyword, new { @id = "keyword", @name = "keyword", @placeholder = "Search by name or email", @style = "width: 180px; height: 25px;" })
+    <input type="button" id="search" class="btn-grey" value="Search" />
+    <input type="button" id="exportToExcel" class="btn-grey" value="Export Data To Excel" />
+    @if (ddlPagination.Any())
+    {
+        @Html.DropDownList("Text", ddlPagination, new { @id = "pageNo", @name = "id", @style = "width: 100px;height: 30px;float:right;" })
+    }
+
+    <table class="Grid" width="760" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <th>Title</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                @* <th>Full Name</th>*@
+                <th>Country</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                @*  <th>Interested In</th>*@
+                <th>Nationality</th>
+                <th>Unit Type</th>
+                <th>Bedrooms</th>
+                <th>Where did you hear about us</th>
+                <th>Date Created</th>
+                <th>CID</th>
+ <th>UTMSource</th>
+ <th>UTMMedium</th>
+ <th>UTMTerm</th>
+ <th>UTMContent</th>
+ <th>UTMCampaign</th>
+
+                @if (statusValue != (int)Status.Delete)
+                {
+                    <th>Action</th>
+                }
+            </tr>
+            @if (userList.Any())
+            {
+                foreach (User item in userList)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        @* <td>@item.FullName</td>*@
+                        <td>@item.Country</td>
+                        <td>@item.Email</td>
+                        <td>@item.Mobile</td>
+                        @*   <td>@item.InterestedIn</td>*@
+                        <td>@item.Nationality</td>
+                        <td>@item.UnitType</td>
+                        <td>@item.Bedrooms</td>
+                        <td>@(item.HearAboutUs)  @(item.Other ? "," + item.txtotherfield : "")</td>
+                        <td>@item.DateCreated</td>
+                        <td>@item.CID</td>
+
+                         <td>@item.UTMSource</td>
+                          <td>@item.UTMMedium</td>
+                           <td>@item.UTMTerm</td>
+                            <td>@item.UTMContent</td>
+                             <td>@item.UTMCampaign</td>
+                        @if (statusValue != (int)Status.Delete)
+                        {
+                            <td>
+                                @if (item.Status != (int)Status.Delete)
+                                {
+                                    <a href='@(Settings.UserListingIPublished.Url+"?UserId="+item.ID)' class="btn-red">
+                                        <i class="icon-trash">&nbsp;</i>Delete
+                                    </a>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6">
+                        No information available for the user.
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="clear"></div>
+</div>
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("~/Common1/JavaScript/validation.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#exportToExcel").click(function () {
+                var url = '@(Helper.GetDictionaryItemByCulture("DomainUrl") + "/UserListHandler/UserHandler.ashx?action=exportToExcel")' + "&country=" + '@(TempData["filterCountry"]==""?null: TempData["filterCountry"])' + "&status=" + '@( TempData["StatusValue"])' + "&keyword=" + '@(TempData["keyword"])';
+                window.open(url, '_blank');
+            });
+
+            $("#search").click(function () {
+
+                var country = $("#country").val();
+                var status = $("#status").val();
+                var keyword = $("#keyword").val();
+                var contextUrl = '@(Helper.GetDictionaryItemByCulture("DomainUrl"))' + '/userlisting/';
+                var url = null;
+
+
+
+                if (country != null) {
+                    if (country.length > 0) {
+                        url = updateURLParameter(contextUrl, "country", country);
+                        contextUrl = url;
+                    }
+                }
+
+                if (status != null) {
+                    if (status.length > 0) {
+                        url = updateURLParameter(contextUrl, "status", status);
+                        contextUrl = url;
+                    }
+                }
+
+
+                if (keyword != "" && keyword.trim().length > 0) {
+                    url = updateURLParameter(contextUrl, "keyword", keyword);
+                    contextUrl = url;
+                }
+                else {
+                    url = RemoveParameterFromUrl(contextUrl, "keyword");
+                    contextUrl = url;
+
+
+
+                }
+
+
+
+                var isValid = true;
+                isValid = ValidateEmail($("#keyword")) && isValid;
+
+                if (isValid) {
+                    $("#validationMessage").css("display", "none");
+
+                    window.location = contextUrl
+
+                    //  window.location.href = contextUrl;
+
+
+
+                }
+                else {
+                    $("#validationMessage").removeClass("green-bg");
+                    $("#validationMessage").addClass("red-bg");
+                    $("#validationMessage").css("display", "block");
+                    $("#validationMessage").html("Please use name or email address to search users");
+                }
+                fadeOutMessage();
+
+            });
+
+            $("#pageNo").change(function () {
+                var pageNo = $("#pageNo").val();
+                var contextUrl = document.URL;
+                var url = null;
+
+                url = updateURLParameter(contextUrl, "id", pageNo);
+
+                window.location = url;
+
+                //  window.location.href = url;
+            })
+
+            function updateURLParameter(url, param, paramVal) {
+
+                var newAdditionalURL = "";
+                var tempArray = url.split("?");
+                var baseURL = tempArray[0];
+                var additionalURL = tempArray[1];
+                var temp = "";
+
+                if (additionalURL) {
+                    tempArray = additionalURL.split("&");
+                    for (i = 0; i < tempArray.length; i++) {
+                        if (tempArray[i].split('=')[0] != param) {
+                            newAdditionalURL += temp + tempArray[i];
+                            temp = "&";
+                        }
+                    }
+                }
+
+                var rows_txt = temp + "" + param + "=" + paramVal;
+                return baseURL + "?" + newAdditionalURL + rows_txt;
+            }
+
+            function RemoveParameterFromUrl(url, parameter) {
+                return url.replace(new RegExp('[?&]' + parameter + '=[^&#]*(#.*)?$'), '$1').replace(new RegExp('([?&])' + parameter + '=[^&]*&'), '$1');
+            }
+
+            function fadeOutMessage() {
+                setTimeout(function () {
+                    $('#validationMessage').fadeOut('slow');
+                }, 4000);
+            }
+
+            fadeOutMessage();
+        });
+    </script>
+}

@@ -1,0 +1,348 @@
+﻿@{
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    string findOutImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/find-out-more-ar.png" : "~/Common/img/find-out-more.png";
+}
+
+@section floodLightTag{
+    <script type="text/javascript">
+        var axel = Math.random() + "";
+        var a = axel * 10000000000000;
+        document.write('<iframe src="https://1727330.fls.doubleclick.net/activityi;src=1727330;type=eagle;cat=mabhome;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    </script>
+    <noscript>
+        <iframe src="https://1727330.fls.doubleclick.net/activityi;src=1727330;type=eagle;cat=mabhome;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    </noscript>
+}
+
+<!--Slider-->
+<div class="main-slider">
+ <div class="slider-wrapper" id="main-slider">
+  <ul class="slides">
+   <li>
+    <a href="contact">
+     <img src="@Html.Raw(Resources.Master.SpotlightImage1)" alt="" />
+    </a>
+   </li>
+   <li>
+    <a href="contact">
+   	 <img src="@Html.Raw(Resources.Master.SpotlightImage4)" alt="" />
+    </a>
+   </li>
+   <li>
+    <a href="contact">
+   	 <img src="@Html.Raw(Resources.Master.SpotlightImage2)" alt="" />
+    </a>
+   </li>
+   <li>
+    <a href="contact">
+   	 <img src="@Html.Raw(Resources.Master.SpotlightImage5)" alt="" />
+    </a>
+   </li>
+   <li>
+    <a href="contact">
+   	 <img src="@Html.Raw(Resources.Master.SpotlightImage3)" alt="" />
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<!--Slider-->
+@Html.Partial("_SocialWidget")
+
+<!--main-->
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-residences-detail">
+            <div class="property-specs-copy-right">
+                <h3>
+                    <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">@Html.Raw(Resources.Master.LiveThe)<span>@Html.Raw(Resources.Master.Waterfrontlifestyle)</span></a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">@Html.Raw(Resources.Master.LiveTheDescription)</a>
+                </p>
+                <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column">
+            <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">
+                <figure><img src="@Url.Content("~/Common/img/live-in-comfort-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="hover01 column-right">
+            <a href="@Url.Action("Retail","FrontEnd")">
+              <figure><img src="@Url.Content("~/Common/img/experience-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="tile-type-left bg-color-residences-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    <a href="@Url.Action("Retail","FrontEnd")">@Html.Raw(Resources.Master.ExperienceA)<span>@Html.Raw(Resources.Master.ShoppingParadise)</span></a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("Retail","FrontEnd")">@Html.Raw(Resources.Master.ExperienceDescription)</a>
+                </p>
+                <a href="@Url.Action("Retail","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-residences-detail">
+            <div class="property-specs-copy-right">
+                <h3>
+                    <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">@Html.Raw(Resources.Master.LiveThe)<span>@Html.Raw(Resources.Master.Waterfrontlifestyle)</span></a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">
+                        @Html.Raw(Resources.Master.LiveTheDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column">
+            <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">
+                <figure><img src="@Url.Content("~/Common/img/live-in-comfort-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="tile-type-left bg-color-residences-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    <a href="@Url.Action("Retail","FrontEnd")">
+                        @Html.Raw(Resources.Master.ExperienceA)<span>@Html.Raw(Resources.Master.ShoppingParadise)</span>
+                    </a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("Retail","FrontEnd")">
+                        @Html.Raw(Resources.Master.ExperienceDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("Retail","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+            <a href="@Url.Action("Retail","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/experience-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+    </article>
+</section>
+
+<section>
+ <article>
+  <div class="discover">
+   <iframe src="https://www.youtube.com/embed/IhSm8rPgvqg" frameborder="0" allowFullScreen> </iframe>
+   
+   <!--
+   <video width="1310" poster="/common/videos/poster.jpg" controls="" preload="none">
+    <source src="http://townsquaredubai.com.at.iprox.net/js/build/trimmed-nshama.mp4" type="video/mp4;codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+    <source src="http://townsquaredubai.com.at.iprox.net/js/build/trimmed-nshama.webm" type="video/webm;codecs=&quot;vp8, vorbis&quot;">
+   </video>
+   -->
+   
+  </div>
+ </article>
+</section>
+
+<!--
+<section>
+    <article>
+        <div class="row my-video">
+            <video width="900" height="440" id="player2" style="width:100%;height:100%;" poster="~/Common/img/video.jpg" controls="" preload="none">
+                <source type="video/webm" src="http://townsquaredubai.com.at.iprox.net/js/build/trimmed-nshama.webm">
+                <source type="video/mp4" src="http://townsquaredubai.com.at.iprox.net/js/build/trimmed-nshama.mp4">
+            </video>
+        </div>
+    </article>
+</section>
+-->
+
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-retail">
+            <div class="property-specs-copy-right">
+                <h3>
+                    <a href="@Url.Action("Residences","FrontEnd")">@Html.Raw(Resources.Master.Your) <span>@Html.Raw(Resources.Master.WaterFrontHome)</span></a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("Residences","FrontEnd")">
+                        @Html.Raw(Resources.Master.YourWaterFrontHomeDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("Residences","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column">
+            <a href="@Url.Action("Residences","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/commercial-hub-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="hover01 column-right">
+            <a href="@Url.Action("the-destination","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/experience-tile-2.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="tile-type-left bg-color-hospitality-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    <a href="@Url.Action("the-destination","FrontEnd")">@Html.Raw(Resources.Master.Enjoy) <span>@Html.Raw(Resources.Master.FantasticAmenities)</span></a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("the-destination","FrontEnd")">
+                        @Html.Raw(Resources.Master.EnjoyFantasticAmenitiesDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("the-destination","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-retail">
+            <div class="property-specs-copy-right">
+                <h3>
+                    <a href="@Url.Action("Residences","FrontEnd")">@Html.Raw(Resources.Master.Your) <span>@Html.Raw(Resources.Master.WaterFrontHome)</span></a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("Residences","FrontEnd")">
+                        @Html.Raw(Resources.Master.YourWaterFrontHomeDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("Residences","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column">
+            <a href="@Url.Action("Residences","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/commercial-hub-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="tile-type-left bg-color-hospitality-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    <a href="@Url.Action("the-destination","FrontEnd")">@Html.Raw(Resources.Master.Enjoy) <span>@Html.Raw(Resources.Master.FantasticAmenities)</span></a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("the-destination","FrontEnd")">
+                        @Html.Raw(Resources.Master.EnjoyFantasticAmenitiesDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("the-destination","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+            <a href="@Url.Action("the-destination","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/experience-tile-2.jpg")" alt="" /></figure>
+            </a>
+        </div>
+    </article>
+</section>
+<!--xxxx-->
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-destination">
+            <div class="property-specs-copy-right">
+                <h3>
+                    <a href="@Url.Action("the-destination","FrontEnd")">
+                        @Html.Raw(Resources.Master.BecomePart) <span>@Html.Raw(Resources.Master.OfABusinessHub)</span>
+                    </a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("the-destination","FrontEnd")">
+                        @Html.Raw(Resources.Master.BecomePartOfABusinessDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("the-destination","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column">
+            <a href="@Url.Action("the-destination","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/aprtment-type-3-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="hover01 column-right">
+            <a href="@Url.Action("about-us","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/experience-tile-3.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="tile-type-left bg-color-about-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    <a href="@Url.Action("about-us","FrontEnd")">@Html.Raw(Resources.Master.About) <span>@Html.Raw(Resources.Master.TheProject)</span></a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("about-us","FrontEnd")">
+                        @Html.Raw(Resources.Master.AboutTheProjectDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("about-us","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-destination">
+            <div class="property-specs-copy-right">
+                <h3>
+                    <a href="@Url.Action("the-destination","FrontEnd")">
+                        @Html.Raw(Resources.Master.BecomePart) <span>@Html.Raw(Resources.Master.OfABusinessHub)</span>
+                    </a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("the-destination","FrontEnd")">
+                        @Html.Raw(Resources.Master.BecomePartOfABusinessDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("the-destination","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column">
+            <a href="@Url.Action("the-destination","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/aprtment-type-3-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="tile-type-left bg-color-about-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    <a href="@Url.Action("about-us","FrontEnd")">
+                        @Html.Raw(Resources.Master.About) <span>@Html.Raw(Resources.Master.TheProject)</span>
+                    </a>
+                </h3>
+                <p>
+                    <a href="@Url.Action("about-us","FrontEnd")">
+                        @Html.Raw(Resources.Master.AboutTheProjectDescription)
+                    </a>
+                </p>
+                <a href="@Url.Action("about-us","FrontEnd")">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+            <a href="@Url.Action("about-us","FrontEnd")">
+                <figure><img src="@Url.Content("~/Common/img/experience-tile-3.jpg")" alt="" /></figure>
+            </a>
+        </div>
+    </article>
+</section>
+<!--main--> 

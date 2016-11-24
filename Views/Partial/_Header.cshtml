@@ -1,0 +1,48 @@
+﻿@{
+    string url = HttpContext.Current.Request.Url.AbsoluteUri;
+}
+<header>
+    <div class="top-header-wrapper">
+        <div class="top-logos">
+            <a href="@Url.Action("Index","FrontEnd")">
+                <img src="@Url.Content("~/Common/img/mab-logo.gif")" alt="" />
+            </a>
+        </div>
+        <!--Main Nav-->
+        <div class="nav-wrapper">
+        	<div class="lang-toggle">
+        	 <a href="@Helper.LanguageSwitcher()">@Html.Raw(Resources.Master.LanguageSwitcherTitle)</a>
+        	</div>
+         <nav class="main-nav-wrapper">
+             <ul class="main-nav">
+                 <li class="@(url.Contains("the-destination") ? "about-selected" : "")">
+                     <a href="@Url.Action("the-destination", "FrontEnd")" class="hvr-fade hvr-fade-destination">@Html.Raw(Resources.Master.TheDestination)</a>
+                 </li>
+                 <li class="@(url.Contains("Residences") ? "residential-selected" : "")">
+                     <a href="@Url.Action("Residences", "FrontEnd")" class="hvr-fade hvr-fade-residence">@Html.Raw(Resources.Master.Residences)</a>
+                 </li>
+                 <li class="@(url.Contains("Retail") ? "retail-selected" : "")">
+                     <a href="@Url.Action("Retail", "FrontEnd")" class="hvr-fade hvr-fade-retail">@Html.Raw(Resources.Master.Retail)</a>
+                 </li>
+                 <li class="@(url.Contains("Hospitality") ? "recreation-selected" : "")">
+                     <a href="@Url.Action("Hospitality","FrontEnd")" class="hvr-fade hvr-fade-hospitality">@Html.Raw(Resources.Master.Hospitality)</a>
+                 </li>
+                 
+                 <!--
+                 <li class="@(url.Contains("office-district") ? "commercial-selected" : "")">
+                     <a href="@Url.Action("office-district", "FrontEnd")" class="hvr-fade hvr-fade-office">@Html.Raw(Resources.Master.OfficeDistrict)</a>
+                 </li>
+                 -->
+                 
+                 <li class="@(url.Contains("about-us") ? "hotel-selected" : "")">
+                     <a href="@Url.Action("about-us","FrontEnd")" class="hvr-fade hvr-fade-about">@Html.Raw(Resources.Master.AboutUs)</a>
+                 </li>
+             </ul>
+         </nav>
+         <div class="menu-toggle">
+            <span class="menu-btn">&nbsp;</span>
+        </div>
+        </div>
+        <!--Main Nav-->
+    </div>
+</header>

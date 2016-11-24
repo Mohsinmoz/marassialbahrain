@@ -1,0 +1,179 @@
+﻿@{
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase() + "-" + Resources.Master.Retail.RemoveHtmlTags().ToTitleCase();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    string learnMoreImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/learn-more-ar.png" : "~/Common/img/learn-more.png";
+}
+
+<!--banner-->
+<div class="banner-wrapper">
+    <img src="@Url.Content("~/Common/img/retail/retail-banner-desktop.jpg")" alt="" />
+    <div class="banner-caption-wrapper">
+        <div class="banner-caption banner-retail" id="retail-1">
+          <h3>
+              @Html.Raw(Resources.Master.WorldClassShoppingAndEntertainment)
+          </h3>
+          <p id="retail-1">
+              @Html.Raw(Resources.Master.WorldClassShoppingAndEntertainmentDescription)
+          </p>
+      </div>
+    </div>
+</div>
+<!--banner-->
+@Html.Partial("_SocialWidget")
+<!--main-->
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-retail">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.RetailPromenade)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.RetailPromenadeDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="retail-2">
+            <figure><img src="@Url.Content("~/Common/img/retail/aprtment-type-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="hover01 column-right" id="retail-3">
+            <figure><img src="@Url.Content("~/Common/img/retail/villa-type-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-retail-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.EntertainmentAtItsBest)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.EntertainmentAtItsBestDescription)
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-retail">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.RetailPromenade)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.RetailPromenadeDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="retail-2">
+            <figure><img src="@Url.Content("~/Common/img/retail/aprtment-type-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-retail-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.EntertainmentAtItsBest)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.EntertainmentAtItsBestDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column-right" id="retail-3">
+            <figure><img src="@Url.Content("~/Common/img/retail/villa-type-tile.jpg")" alt="" /></figure>
+        </div>
+    </article>
+</section>
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-retail">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.ShoppingCentre)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.ShoppingCentreDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="retail-4">
+            <figure><img src="@Url.Content("~/Common/img/retail/aprtment-type-tile-2.jpg")" alt="" /></figure>
+        </div>
+        <div class="hover01 column-right">
+            <figure><img src="@Url.Content("~/Common/img/retail/villa-type-tile-2.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-retail-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.WaterfrontRetail)
+			    </h3>
+                <p>
+                    @Html.Raw(Resources.Master.WaterfrontRetailDescription)
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-retail">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.ShoppingCentre)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.ShoppingCentreDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column">
+            <figure><img src="@Url.Content("~/Common/img/retail/aprtment-type-tile-2.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-retail-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.WaterfrontRetail)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.WaterfrontRetailDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+            <figure><img src="@Url.Content("~/Common/img/retail/villa-type-tile-2.jpg")" alt="" /></figure>
+        </div>
+    </article>
+</section>
+<section>
+    <article>
+        <div class="other-properties-wrapper other-retail">
+            <h2>
+                @Html.Raw(Resources.Master.OtherFeatures)
+            </h2>
+            <ul>
+                <li>
+                    <img src="@Url.Content("~/Common/img/destination-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy destination">
+                        <h2>@Html.Raw(Resources.Master.Destination.ToTitleCase())</h2>
+                        <a href="@Url.Action("the-destination", "FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/residences-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy residences">
+                        <h2>@Html.Raw(Resources.Master.Residences.ToTitleCase())</h2>
+                        <a href="@Url.Action("Residences","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/hotels-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy hotels">
+                        <h2>@Html.Raw(Resources.Master.Hospitality.ToTitleCase())</h2>
+                        <a href="@Url.Action("Hospitality","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+<!--main-->

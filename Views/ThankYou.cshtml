@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase() + "-" + Resources.Master.ContactUs.RemoveHtmlTags().ToTitleCase();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section floodLightTag{
+    <script type="text/javascript">
+        var axel = Math.random() + "";
+        var a = axel * 10000000000000;
+      
+        document.write('<iframe src="https://1727330.fls.doubleclick.net/activityi;src=1727330;type=Sales0;cat=mab;qty=1;cost= @TempData["Revenue"] ;u2=@TempData["Nationality"] ;u3= @TempData["Eml"] ;u7=@TempData["First_Nme"] ;u8=@TempData["Last_Nme"] ;u16=@TempData["Destination"] ;u19=@TempData["ActionType"] ;u20=@TempData["Mobile_No"] ;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');  
+        </script>
+    <noscript>
+        <iframe src="https://1727330.fls.doubleclick.net/activityi;src=1727330;type=eagle;cat=mabthank;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    </noscript>
+}
+
+<!--banner-->
+<div class="banner-wrapper">
+    <img src="@Url.Content("~/Common/img/contact-banner-desktop.jpg")" alt="" />
+    
+</div>
+<!--banner-->
+@Html.Partial("_SocialWidget")
+
+<!--main-->
+<section>
+    <div class="contact-thank">
+        <h3>@Resources.Master.ThankYou</h3>
+        <p>
+            @Html.Raw(Resources.Master.ThankYouDescription)
+        </p>
+    </div>
+</section>
+<section>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        var myCenter = new google.maps.LatLng(26.304044, 50.644462);
+
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 10,
+                minZoom: 2,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapProp);
+
+            var marker = new google.maps.Marker({
+                position: myCenter,
+            });
+
+            marker.setMap(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <div id="map-canvas"></div>
+</section>
+<!--main-->

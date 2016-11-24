@@ -1,0 +1,470 @@
+﻿
+
+
+@{
+  
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase() + "-" + Resources.Master.ResidentialDetail.RemoveHtmlTags().ToTitleCase();
+   
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string learnMoreImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/learn-more-ar.png" : "~/Common/img/learn-more.png";
+    
+    string infoOneImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/residences_detail/bedroom-1-ar.png" : "~/Common/img/residences_detail/bedroom-1.png";
+    
+    string infoTwoImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/residences_detail/bedroom-2-ar.png" : "~/Common/img/residences_detail/bedroom-2.png";
+    
+    string infoThreeImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/residences_detail/bedroom-3-ar.png" : "~/Common/img/residences_detail/bedroom-3.png";
+    
+    string registerNowImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/residential/register-now-ar.png" : "~/Common/img/residential/register-now.png";
+    
+    string floorOneImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/floor-plans/floor-plan-1-ar.jpg" : "~/Common/img/floor-plans/floor-plan-1.jpg";
+    
+    string floorTwoImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/floor-plans/floor-plan-2-ar.jpg" : "~/Common/img/floor-plans/floor-plan-2.jpg";
+    
+    string floorThreeImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/floor-plans/floor-plan-3-ar.jpg" : "~/Common/img/floor-plans/floor-plan-3.jpg";
+    
+    string ContactUsURL = Settings.Culture.Equals("ar") ? "~/ar/contact" : "~/en/contact";
+}
+
+    
+
+<div class="banner-wrapper">
+  <img src="@Url.Content("~/common/img/residences_detail/banner-desktop.jpg")" alt="">
+  <div class="banner-caption-wrapper">
+   <div class="banner-caption banner-residences-detail" id="residence-1">
+    <h3>
+       @Html.Raw(Resources.Master.PropertyName)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.PropertyNameDescription)
+     </p>
+    <div class="facillities-heading">
+     <h3>
+      <span>
+       @Html.Raw(Resources.Master.Facilities)  
+      </span>
+     </h3>
+    </div>
+    <ul>
+     <li>
+      <img src="@Url.Content(infoOneImageUrl)" alt="" />
+      <!--<p>
+       @Html.Raw(Resources.Master.TWOTHREE)  
+      </p>-->
+     </li>
+     <li>
+      <img src="@Url.Content(infoTwoImageUrl)" alt="" />
+      <!--<p>
+       @Html.Raw(Resources.Master.TWOTHREE)  
+      </p>-->
+     </li>
+     <li>
+      <img src="@Url.Content(infoThreeImageUrl)" alt="" />
+      <!--<p>
+      @Html.Raw(Resources.Master.TWOTHREE)  
+      </p>-->
+     </li>
+    </ul>
+   </div>
+  </div>
+ </div>
+
+@Html.Partial("_SocialWidget")
+
+
+ <!--main-->
+ <section>
+  <article class="desktop-image">
+   <div class="tile-type-right bg-color-residences-detail">
+    <div class="property-specs-copy-right">
+     <h3>
+       @Html.Raw(Resources.Master.ApartmentFeatureONE)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.ApartmentFeatureONEDescription)
+     </p>
+    </div>
+   </div>
+   
+   <div class="detail-tile detail-tile-left" id="gallery-slider-3">
+	  <ul class="slides">
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/1.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/11.jpg")" alt="" />
+	   </li>
+	  </ul>
+	  <a href="#" class="gallery-zoom my_popup_open" id="zoom-3">
+	   <img src="@Url.Content("~/common/img/gallery-zoom.jpg")" alt="" />
+	  </a>
+	 </div>
+   
+   <!--
+   <div class="hover01 column" id="residence-2">
+    <figure><img src="@Url.Content("~/common/img/residences_detail/1.jpg")" alt=""></figure>
+   </div>
+   -->
+   
+   <div class="detail-tile" id="gallery-slider">
+	  <ul class="slides">
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/2.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/3.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/4.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/5.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/6.jpg")" alt="" />
+	   </li>
+	  </ul>
+	  <a href="#" class="gallery-zoom my_popup_open" id="zoom-1">
+	   <img src="@Url.Content("~/common/img/gallery-zoom.jpg")" alt="" />
+	  </a>
+	 </div>
+   <div class="tile-type-left bg-color-residences-detail-left">
+    <div class="property-specs-copy-left">
+     <h3>
+      @Html.Raw(Resources.Master.ApartmentFeatureTWO)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.ApartmentFeatureTWODescription)
+     </p>
+    </div>
+   </div>
+  </article>
+  <article class="mobile-image">
+   <div class="tile-type-right bg-color-residences-detail">
+    <div class="property-specs-copy-right">
+     <h3>
+       @Html.Raw(Resources.Master.ApartmentFeatureONE)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.ApartmentFeatureONEDescription)
+     </p>
+    </div>
+   </div>
+   
+   <div class="detail-tile detail-tile-left" id="gallery-slider-6">
+	  <ul class="slides">
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/1.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/11.jpg")" alt="" />
+	   </li>
+	  </ul>
+	 </div>
+   
+   <!--
+   <div class="hover01 column" id="residence-2">
+    <figure><img src="@Url.Content("~/common/img/residences_detail/1.jpg")" alt=""></figure>
+   </div>
+   -->
+   
+   <div class="tile-type-left bg-color-residences-detail-left">
+    <div class="property-specs-copy-left">
+     <h3>
+      @Html.Raw(Resources.Master.ApartmentFeatureTWO)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.ApartmentFeatureTWODescription)
+     </p>
+    </div>
+   </div>
+   <div class="detail-tile" id="gallery-slider-4">
+	  <ul class="slides">
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/2.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/3.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/4.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/5.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/6.jpg")" alt="" />
+	   </li>
+	  </ul>
+	 </div>
+  </article>
+ </section>
+ 
+ <!--discover-->
+ <section>
+  <article>
+   <div class="discover">
+    <img src="@Url.Content("~/Common/img/residential/discover-the-surroundings.jpg")">
+   </div>
+  </article>
+ </section>
+ <!--discover-->
+ 
+ <section>
+	<article class="desktop-image">
+   <div class="tile-type-right bg-color-residences-detail">
+    <div class="property-specs-copy-right">
+     <h3>
+      @Html.Raw(Resources.Master.ApartmentFeatureTHREE)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.ApartmentFeatureTHREEDescription)
+     </p>
+    </div>
+   </div>
+   <div class="hover01 column" id="residence-3">
+    <figure><img src="@Url.Content("~/common/img/residences_detail/8.jpg")" alt=""></figure>
+   </div>
+   
+   <!--
+   <div class="detail-tile detail-tile-left" id="gallery-slider-3">
+	  <ul class="slides">
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/7.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/8.jpg")" alt="" />
+	   </li>
+	  </ul>
+	  <a href="#" class="gallery-zoom my_popup_open" id="zoom-3">
+	   <img src="@Url.Content("~/common/img/gallery-zoom.jpg")" alt="" />
+	  </a>
+	 </div>
+	 -->
+	 
+   <div class="detail-tile" id="gallery-slider-2">
+	  <ul class="slides">
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/10.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/9.jpg")" alt="" />
+	   </li>
+	  </ul>
+	  <a href="#" class="gallery-zoom my_popup_open" id="zoom-2">
+	   <img src="@Url.Content("~/common/img/gallery-zoom.jpg")" alt="" />
+	  </a>
+	 </div>
+   <div class="tile-type-left bg-color-residences-detail-left">
+    <div class="property-specs-copy-left">
+     <h3>
+      @Html.Raw(Resources.Master.ApartmentFeatureFOUR)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.ApartmentFeatureFOURDescription)
+     </p>
+    </div>
+   </div>
+   
+  </article>
+  <article class="mobile-image">
+   <div class="tile-type-right bg-color-residences-detail">
+    <div class="property-specs-copy-right">
+     <h3>
+      @Html.Raw(Resources.Master.ApartmentFeatureTHREE)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.ApartmentFeatureTHREEDescription)
+     </p>
+    </div>
+   </div>
+   <div class="hover01 column" id="residence-3">
+    <figure><img src="@Url.Content("~/common/img/residences_detail/8.jpg")" alt=""></figure>
+   </div>
+   
+   <!--
+   <div class="detail-tile" id="gallery-slider-6">
+	  <ul class="slides">
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/7.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/8.jpg")" alt="" />
+	   </li>
+	  </ul>
+	 </div>
+	 -->
+	 
+	 <!--
+	 <div class="tile-type-left bg-color-residences-detail-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.ApartmentFeatureFOUR)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.ApartmentFeatureFOURDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+            <figure><img src="@Url.Content("~/common/img/residences_detail/9.jpg")" alt="" /></figure>
+        </div>
+        -->
+	 
+   <div class="tile-type-left bg-color-residences-detail-left">
+    <div class="property-specs-copy-left">
+     <h3>
+      @Html.Raw(Resources.Master.ApartmentFeatureFOUR)
+     </h3>
+     <p>
+       @Html.Raw(Resources.Master.ApartmentFeatureFOURDescription)
+     </p>
+    </div>
+   </div>
+   <div class="detail-tile" id="gallery-slider-5">
+	  <ul class="slides">
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/10.jpg")" alt="" />
+	   </li>
+	   <li>
+	    <img src="@Url.Content("~/common/img/residences_detail/9.jpg")" alt="" />
+	   </li>
+	  </ul>
+	 </div>
+	 
+  </article>
+ </section>
+
+
+
+ <section>
+  <div class="floor-plan-slider">
+   <div  class="floor-plan-slider-wrapper" id="floor-plan-slider">
+    <ul class="slides">    
+     <li>
+      <img src="@Url.Content(floorOneImageUrl)" alt=""/>
+      <!--
+      <ul class="bedrooms-type-wrapper">
+       <li class="bedroom-minus">       
+     		@Html.Raw(Resources.Master.Bedroom_3)   
+       </li>
+       <li class="bedroom-plus">
+        @Html.Raw(Resources.Master.Bedroom_2)   
+       </li>
+      </ul>
+      -->
+      <div class="floor-plan-banner">
+       <div class="floor-caption-inner">
+        <div class="floor-caption-inner-border">
+         <h3>
+          @Html.Raw(Resources.Master.IntrestedInThisProperty)  
+         </h3>
+         <a href="@Url.Content(ContactUsURL)">
+	        <img src="@Url.Content(registerNowImageUrl)" alt="">
+	       </a>
+        </div>
+       </div>
+      </div>
+     </li>
+     <li>
+      <img src="@Url.Content(floorTwoImageUrl)" alt=""/>
+      <!--
+      <ul class="bedrooms-type-wrapper">
+       <li class="bedroom-minus">
+         @Html.Raw(Resources.Master.Bedroom_1) 
+       </li>
+       <li class="bedroom-plus">
+       @Html.Raw(Resources.Master.Bedroom_3)
+       </li>
+      </ul>
+      -->
+      <div class="floor-plan-banner">
+       <div class="floor-caption-inner">
+        <div class="floor-caption-inner-border">
+         <h3>
+         @Html.Raw(Resources.Master.IntrestedInThisProperty)  
+         </h3>
+         <a href="@Url.Content(ContactUsURL)">
+	        <img src="@Url.Content(registerNowImageUrl)" alt="">
+	       </a>
+        </div>
+       </div>
+      </div>
+     </li>
+     <li>
+      <img src="@Url.Content(floorThreeImageUrl)" alt=""/>
+      <!--
+      <ul class="bedrooms-type-wrapper">
+       <li class="bedroom-minus">
+         @Html.Raw(Resources.Master.Bedroom_2) 
+       </li>
+       <li class="bedroom-plus">
+       @Html.Raw(Resources.Master.Bedroom_1) 
+       </li>
+      </ul>
+      -->
+      <div class="floor-plan-banner">
+       <div class="floor-caption-inner">
+        <div class="floor-caption-inner-border">
+         <h3>
+         @Html.Raw(Resources.Master.IntrestedInThisProperty)  
+         </h3>
+         <a href="@Url.Content(ContactUsURL)">
+	        <img src="@Url.Content(registerNowImageUrl)" alt="">
+	       </a>
+        </div>
+       </div>
+      </div>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </section>
+ <!--Floor Plan Slider--> 
+
+
+
+ <!--main-->
+<section>
+  <article>
+   <div class="other-properties-wrapper other-residences-detail">
+    <h2>
+      @Html.Raw(Resources.Master.OtherFeatures)
+    </h2>
+    <ul>
+     <li>
+                    <img src="@Url.Content("~/Common/img/map-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy residences">
+                        <h2>@Html.Raw(Resources.Master.ResidencesFeature.ToTitleCase())</h2>
+                        <a href="contact#map-canvas">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+     <li>
+      <img src="@Url.Content("~/Common/img/retail-tile.jpg")" alt="">
+      <div class="other-properties-tile-copy retail-mall">
+      <h2>@Html.Raw(Resources.Master.Retail.ToTitleCase())</h2>
+                        <a href="@Url.Action("Retail","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+      </div>
+     </li>
+     <li>
+      <img src="@Url.Content("~/Common/img/hotels-tile.jpg")" alt="">
+      <div class="other-properties-tile-copy hotels">
+       <h2>@Html.Raw(Resources.Master.Hospitality.ToTitleCase())</h2>
+                        <a href="@Url.Action("Hospitality","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+      </div>
+     </li>
+    </ul>
+   </div>
+  </article>
+ </section>
+ <!--main-->
+ <div id="my_popup">
+ 	<img src="@Url.Content("~/common/img/")" alt="" />
+ <div class="@( Settings.Culture.Equals("ar") ?  "toggle-ar":"toggle" )"> <button class= "my_popup_close">X</button></div>
+ </div>

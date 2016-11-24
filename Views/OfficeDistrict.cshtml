@@ -1,0 +1,183 @@
+﻿@{
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase() + "-" + Resources.Master.OfficeDistrict.RemoveHtmlTags().ToTitleCase();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    string learnMoreImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/learn-more-ar.png" : "~/Common/img/learn-more.png";
+}
+
+<!--banner-->
+<div class="banner-wrapper">
+    <img src="@Url.Content("~/Common/img/office-district/office-district-banner-desktop.jpg")" alt="" />
+    <div class="banner-caption-wrapper">
+        <div class="banner-caption banner-office" id="office-1">
+         <h3>
+             @Html.Raw(Resources.Master.EverythingABusiness)
+         </h3>
+         <p>
+             @Html.Raw(Resources.Master.EverythingABusinessDescription)
+         </p>
+     </div>
+    </div>
+</div>
+<!--banner-->
+@Html.Partial("_SocialWidget")
+<!--main-->
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-office">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.OfficeDistrictBox)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.OfficeDistrictBoxDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="office-2">
+            <figure><img src="@Url.Content("~/Common/img/office-district/aprtment-type-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="hover01 column-right" id="office-3">
+            <figure><img src="@Url.Content("~/Common/img/office-district/villa-type-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-office-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.IdeallyLocated2)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.IdeallyLocated2Description)
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-office">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.OfficeDistrictBox)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.OfficeDistrictBoxDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="office-2">
+            <figure><img src="@Url.Content("~/Common/img/office-district/aprtment-type-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-office-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.IdeallyLocated2)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.IdeallyLocated2Description)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column-right" id="office-3">
+            <figure><img src="@Url.Content("~/Common/img/office-district/villa-type-tile.jpg")" alt="" /></figure>
+        </div>
+    </article>
+</section>
+
+<!--
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-office">
+            <div class="property-specs-copy-right">
+                <h3>
+                    Apartment <span>Name</span>
+                </h3>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="office-4">
+            <img src="@Url.Content("~/Common/img/office-district/aprtment-type-tile-2.jpg")" alt="" />
+        </div>
+        <div class="tile-type-1" id="office-5">
+            <img src="@Url.Content("~/Common/img/office-district/villa-type-tile-2.jpg")" alt="" />
+        </div>
+        <div class="tile-type-left bg-color-office-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    Apartment <span>Name</span>
+                </h3>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-office">
+            <div class="property-specs-copy-right">
+                <h3>
+                    Apartment <span>Name</span>
+                </h3>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="office-4">
+            <img src="@Url.Content("~/Common/img/office-district/aprtment-type-tile-2.jpg")" alt="" />
+        </div>
+        <div class="tile-type-left bg-color-office-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    Apartment <span>Name</span>
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.ApartmentNameDesription)
+                </p>
+            </div>
+        </div>
+        <div class="tile-type-1" id="office-5">
+            <img src="@Url.Content("~/Common/img/office-district/villa-type-tile-2.jpg")" alt="" />
+        </div>
+    </article>
+</section>
+-->
+
+<section>
+    <article>
+        <div class="other-properties-wrapper other-office">
+            <h2>
+                @Html.Raw(Resources.Master.OtherFeatures)
+            </h2>
+            <ul>
+                <li>
+                    <img src="@Url.Content("~/Common/img/residences-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy residences">
+                        <h2>@Html.Raw(Resources.Master.Residences.ToTitleCase())</h2>
+                        <a href="@Url.Action("Residences","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/retail-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy retail-mall">
+                        <h2>@Html.Raw(Resources.Master.Retail.ToTitleCase())</h2>
+                        <a href="@Url.Action("Retail","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/hotels-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy hotels">
+                        <h2>@Html.Raw(Resources.Master.Hospitality.ToTitleCase())</h2>
+                        <a href="@Url.Action("Hospitality","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+<!--main--> 

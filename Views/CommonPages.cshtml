@@ -1,0 +1,720 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using MarassiAlBahrain.Shared;
+@using MarassiAlBahrain.Model;
+@using Umbraco.Core.Models;
+@using Newtonsoft.Json;
+@{
+    Layout = "master.cshtml";
+
+    var staticBannerImage = Helper.GetCultureBasedImagePath("staticBannerImage", CurrentPage.Id);
+    var content = Helper.GetCultureBasedProperty("content", CurrentPage.Id);
+    var isMapRequired = Helper.GetCultureBasedProperty("isMapRequired", CurrentPage.Id);
+    var cssClass = Helper.GetCultureBasedProperty("cssClass", CurrentPage.Id);
+    var linkId = Helper.GetCultureBasedProperty("isContactUsRequired", CurrentPage.Id);
+    var BrochurelinkId = Helper.GetCultureBasedProperty("isBrochureRequired", CurrentPage.Id);
+
+    string cultureParameter = string.Empty;
+
+
+    string currentCulture = Helper.CurrentLanguage;
+
+    if (currentCulture == "ar")
+    {
+        cultureParameter = "?lang=ar";
+
+    }
+    else
+    {
+
+        cultureParameter = "?lang=en";
+    }
+
+
+    var linkIdFloodLightTag = Helper.GetCultureBasedProperty("isFloodLightTagRequired", CurrentPage.Id);
+
+    var isFloodlighttagSpecialScriptRequired = Helper.GetCultureBasedProperty("isFloodlighttagSpecialScriptRequired", CurrentPage.Id);
+
+}
+
+
+
+@section floodLightTag{
+
+    @if (linkIdFloodLightTag == "1")
+    {
+
+
+        @Html.Raw(@Helper.GetCultureBasedProperty("floodlighttag", Convert.ToInt32(CurrentPage.Id)))
+
+    }
+
+
+
+    @if (isFloodlighttagSpecialScriptRequired == "1")
+    {
+
+        @* <script type="text/javascript">
+               var axel = Math.random() + "";
+               var a = axel * 10000000000000;
+
+               document.write('<iframe src="https://1727330.fls.doubleclick.net/activityi;src=1727330;type=Sales0;cat=mab;qty=1;cost= @TempData["Revenue"] ;u2=@TempData["Nationality"] ;u3= @TempData["Eml"] ;u7=@TempData["First_Nme"] ;u8=@TempData["Last_Nme"] ;u16=@TempData["Destination"] ;u19=@TempData["ActionType"] ;u20=@TempData["Mobile_No"] ;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+                </script>
+            <noscript>
+                <iframe src="https://1727330.fls.doubleclick.net/activityi;src=1727330;type=eagle;cat=mabthank;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+            </noscript>*@
+
+
+
+        <script type="text/javascript">
+            var axel = Math.random() + "";
+            var a = axel * 10000000000000;
+            document.write('<iframe src="https://5419702.fls.doubleclick.net/activityi;src=5419702;type=thanky;cat=ar-ma0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+        </script>
+        <noscript>
+            <iframe src="https://5419702.fls.doubleclick.net/activityi;src=5419702;type=thanky;cat=ar-ma0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+        </noscript>
+
+    }
+
+
+
+}
+
+
+
+@section styles{
+    <link rel="stylesheet" href="@Url.Content("~/Common/css/intlTelInput.css")">
+}
+
+@Html.Partial("_Banner")
+
+
+
+@{
+
+
+    if (!String.IsNullOrEmpty(staticBannerImage))
+    {
+        <!--banner-->
+        <div class="banner-wrapper">
+            <img src="@staticBannerImage" alt="" />
+        </div>
+
+    }
+    <!--banner-->
+    @*<div class="sticky-container">
+    <ul class="sticky">
+    @Html.Partial("_SocialWidget")
+    
+    @Html.Partial("_BrochureWidget")
+        </ul>
+        </div>*@
+    if (linkId == "1")
+    {
+        <section>
+
+            @Html.Partial("_ContactUs", new User())
+        </section>
+    }
+
+
+    if (BrochurelinkId == "1")
+    {
+        <section>
+
+            @Html.Partial("_Brochure", new MarrasiAlBahrain.Model.Brochure())
+        </section>
+    }
+    
+    
+    
+
+    @Html.Partial("_DetailPageSection")
+
+
+    if (!String.IsNullOrEmpty(content))
+    {
+
+        <!--main-->
+        <section>
+            <div class="@cssClass">
+                @Html.Raw(content)
+
+            </div>
+        </section>
+
+    }
+
+
+
+
+    @section scripts{
+        <script src="@Url.Content("~/Common/js/intlTelInput.js")"></script>
+        
+
+<script type="text/javascript">
+
+    var widId = "";
+
+    var onloadCallback = function () {
+        if (window.grecaptcha) {
+            widId = grecaptcha.render('recapchaWidget', {
+                //'sitekey': '6LeKnxATAAAAAI9TWLdfUXTe_YGTylR-mnCUpWiq'
+                'sitekey': '@Settings.RecapchaKey'
+            });
+        }
+    };
+
+    window.onloadCallback();
+        </script>
+      
+        <script src="@Url.Content("~/Common/js/jquery.validate.min.js")"></script>
+        <script src="@Url.Content("~/Common/js/validation.js")"></script>
+    
+          <script src="~/Common/js/jquery.cookie.js"></script>
+@*<script src="~/Common/js/jquery-cookie-master/src/jquery.cookie.js"></script>*@
+        <script>
+
+
+            var readAr = window.location;
+
+
+            $("#spoon-plugin-kncgbdglledmjmpnikebkagnchfdehbm-2").parents('div:first').remove(); //.css("display", "none");
+
+
+
+
+
+            if (readAr.pathname.indexOf("marassi-residences/") != -1) {
+
+                //(".hvr-fade hvr-fade-residence").addClass("residential-selected")
+
+                $(".hvr-fade-residence").parent().addClass("residential-selected");
+
+            }
+
+
+
+            $("#cancel-btn").on("click", function () {
+
+                $("#cbo-title").val("--");
+                // var fullName = $("#txtFullName");
+
+                $("#txtFirstName").val('');
+                $("#txtLastName").val('');
+
+                $("#cbo-country").val("--");;
+                $("#txtEmail").val('');
+                $("#txtMobileNumber").val($("#txtMobileNumber").val().substring(0, $("#txtMobileNumber").val().split(' ')[0].length + 1));
+
+
+
+                $("#cbo-nationality").val("--");
+                $("#cbo-unittype").val("--");
+                $("#chkBedroom1").removeAttr('checked');
+                $("#chkBedroom2").removeAttr('checked');
+                $("#chkBedroom3").removeAttr('checked');
+                $("#Studio").removeAttr('checked');
+                $("#Penthouse").removeAttr('checked');
+                $("#chkWebsearch").removeAttr('checked');
+                $("#chkSalesTeam").removeAttr('checked');
+                $("#chkmagazine").removeAttr('checked');
+                $("#chkonline").removeAttr('checked');
+                $("#chkSocialMedia").removeAttr('checked');
+                $("#chkOther").removeAttr('checked');
+
+            });
+
+            $(document).ready(function () {
+                $("#txtotherfield").hide();
+                $("#errorMessage").hide();
+                $("#txtMobileNumber").intlTelInput();
+
+            });
+
+
+            jQuery.support.cors = true;
+
+            function GetFields() {
+                var NoOfBedroom = "";
+                if ($("#chkBedroom1").is(':checked')) {
+                    NoOfBedroom += $("#hdnBedroom1").val().trim().split('-')[0] + ",";
+                }
+                if ($("#chkBedroom2").is(':checked')) {
+                    NoOfBedroom += $("#hdnBedroom2").val().trim().split('-')[0] + ",";
+                }
+                if ($("#chkBedroom3").is(':checked')) {
+                    NoOfBedroom += $("#hdnBedroom3").val().trim().split('-')[0] + ",";
+                }
+                if ($("#Studio").is(':checked')) {
+                    NoOfBedroom += $("#hdnStudio").val().trim() + ",";
+                }
+                if ($("#Penthouse").is(':checked')) {
+                    NoOfBedroom += $("#hdnPenthouse").val().trim() + ",";
+                }
+
+
+
+
+                if (NoOfBedroom != "") {
+                    NoOfBedroom = NoOfBedroom.slice(0, -1);
+                }
+
+
+                var HearAboutUs = "";
+
+                if ($("#chkWebsearch").is(':checked')) {
+                    HearAboutUs += $("#lblWebsearch").html().trim() + ",";
+                }
+                if ($("#chkSalesTeam").is(':checked')) {
+                    HearAboutUs += $("#lblSalesTeam").html().trim() + ",";
+                }
+                if ($("#chkmagazine").is(':checked')) {
+                    HearAboutUs += $("#lblmagazine").html().trim() + ",";
+                }
+
+                if ($("#chkonline").is(':checked')) {
+                    HearAboutUs += $("#lblonline").html().trim() + ",";
+                }
+
+
+                if ($("#chkSocialMedia").is(':checked')) {
+                    HearAboutUs += $("#lblSocialMedia").html().trim() + ",";
+                }
+
+
+                if (HearAboutUs != "") {
+                    HearAboutUs = HearAboutUs.slice(0, -1);
+                }
+
+                return {
+                    salutation: $("#cbo-title").val(),
+                    firstName: $("#txtFirstName").val(),
+                    lastName: $("#txtLastName").val(),
+                    unittype: $('option:selected', '#cbo-unittype').html(),
+                    country: $('option:selected', '#cbo-country').html(),
+                    email: $("#txtEmail").val(),
+                    mobile: $("#txtMobileNumber").val(),
+                    nationality: $('option:selected', '#cbo-nationality').html(),
+
+                    //intrestedin: $('option:selected', '#projects-dd').html(),
+
+                    //unittype: $("#UnitType").val(),
+                    //PreferedCommunicationChannel: $("#PreferedCommunicationChannel").val(),
+                    //InvestmentType: $("#InvestmentType").val(),
+
+                    HearAboutUs: HearAboutUs,
+                    NoOfBedroom: NoOfBedroom,
+
+                    //bedroom1: $("#chkBedroom1").is(':checked'),
+                    //bedroom2: $("#chkBedroom2").is(':checked'),
+                    //bedroom3: $("#chkBedroom3").is(':checked'),
+                    //websearch: $("#chkWebsearch").is(':checked'),
+                    //salesteam: $("#chkSalesTeam").is(':checked'),
+                    //magazine: $("#chkmagazine").is(':checked'),
+                    //online: $("#chkonline").is(':checked'),
+                    //socialmedia: $("#chkSocialMedia").is(':checked'),
+                    //other: $("#chkOther").is(':checked'),
+
+                    txtotherfield: $("#txtotherfield").val(),
+                    AdditionalInfo: $("#hdnBedrooms").val()
+                }
+
+
+            }
+
+
+
+
+
+            function POSTMethodCall() {
+
+
+                //var abc = $.cookie("utm_source").val();
+                var utm_medium = $.cookie("utm_medium");
+                var utm_source = $.cookie("utm_source")
+                var utm_term = $.cookie("utm_term")
+                var utm_content = $.cookie("utm_content")
+                var utm_campaign = $.cookie("utm_campaign")
+
+
+                if (utm_medium === null || utm_medium === "") {
+
+                    utm_medium = "website";
+                   
+                }
+                else {
+                    utm_medium = $.cookie("utm_medium");
+                }
+
+
+                if (utm_source === null || utm_source === "") {
+
+                    utm_source = "Online";
+                   
+                }
+                else {
+                    utm_source = $.cookie("utm_source")
+                }
+
+
+
+                var field = GetFields();
+
+                var LeadDetails = { "newLead": { "Salutation": field.salutation, "FirstName": field.firstName, "LastName": field.lastName, "Email": field.email, "MobilePrefix": (field.mobile).split(' ')[0], "MobileNumber": (field.mobile).split(' ')[1].replace(/^0+/, ''), "Nationality": field.nationality, "CountryOfResidence": field.country, "PreferredLanguage": '', "UnitType": field.unittype, "HeardAboutUs": field.HearAboutUs, "Other": field.txtotherfield, "AdditionalInfo": field.AdditionalInfo, "NoOfBedrooms": field.NoOfBedroom, "Website": "www.marassialbahrain.com", "LeadSource": utm_medium, "LeadChannel": utm_source, "CampaignTerms": utm_term, "MediaPlatform": utm_content, "CampaignName": utm_campaign, "InterestedIn": "Marassi Shores Residences", "Website": "www.marassialbahrain.com" } };
+                var st = JSON.stringify(LeadDetails);
+                //debugger;
+
+                $.ajax({
+                    type: "POST",
+                    async:false,
+                    url: '@(System.Configuration.ConfigurationManager.AppSettings["CRMUrl"].ToString())',
+                    data: JSON.stringify(LeadDetails),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        // Play with response returned in JSON format
+                        //   if (callBack != undefined)
+                        //      callBack();
+
+
+                        // alert(data.AddLeadResult);
+
+                        console.log("GUI = " + data.AddLeadResult);
+                    },
+                    error: ServiceFailed
+                });
+
+                return true;
+
+            }
+
+            function SuccessMsg(data) {
+                alert("Success" + data.AddLeadResult);
+
+            }
+
+            function ServiceFailed(xhr) {
+                // alert("Fail" + xhr.responseText);
+
+                if (xhr.responseText) {
+                    var err = xhr.responseText;
+                    if (err)
+                        error(err);
+                    else
+                        error({ Message: "Unknown server error." })
+                }
+
+
+            }
+
+
+
+            $("#chkOther").change(function () {
+
+                var chk = $("#chkOther");
+
+                if (chk.is(':checked')) {
+                    $("#txtotherfield").prop("disabled", false);
+                    $("#txtotherfield").attr("disabled", false);
+                    $("#txtotherfield").show();
+                    $("#errorMessage").hide();
+                }
+                else {
+                    $("#txtotherfield").prop("disabled", true);
+                    $("#txtotherfield").attr("disabled", true);
+                    $("#txtotherfield").hide();
+                }
+            });
+
+            function IsRecapchaValid() {
+
+                var res = grecaptcha.getResponse(widId);
+                if (res == "" || res == undefined || res.length == 0) {
+                    return false;
+                }
+
+                return true;
+            }
+
+            function ValidateCharacter(evt) {
+
+
+                var theEvent = evt || window.event;
+                var key = theEvent.keyCode || theEvent.which;
+
+
+                if (key != 8 && key != 9 && key != 37 && key != 39 && key != 46) {
+                    key = String.fromCharCode(key);
+
+                    var regex = /^(([a-zA-Z, ]+)$|([ ,ء-ي ]+) |([\u0600-\u06FF]+)$)/;
+
+                    if (!regex.test(key)) {
+                        theEvent.returnValue = false;
+                        if (theEvent.preventDefault) theEvent.preventDefault();
+                    }
+                }
+            }
+
+            function ValidateNumber(evt) {
+                var theEvent = evt || window.event;
+                var key = theEvent.keyCode || theEvent.which;
+
+                if (key != 8 && key != 9 && key != 37 && key != 39 && key != 46) {
+
+                    key = String.fromCharCode(key);
+                    var regex = /^[0-9]*$/;
+                    if (!regex.test(key)) {
+                        theEvent.returnValue = false;
+                        if (theEvent.preventDefault) theEvent.preventDefault();
+                    }
+                }
+            }
+
+            $('#txtMobileNumber').on('keypress, keydown', function (event) {
+
+                var readOnlyLength = $('li.country.active > span.dial-code').eq(0).text().length;
+
+
+                if (readOnlyLength == 3)
+                    $('#txtMobileNumber').attr("MaxLength", "14");
+
+                if (readOnlyLength == 4)
+                    $('#txtMobileNumber').attr("MaxLength", "15");
+
+                if (readOnlyLength == 5)
+                    $('#txtMobileNumber').attr("MaxLength", "16");
+
+
+                if ((event.which != 37 && (event.which != 39))
+                    && ((this.selectionStart < readOnlyLength)
+                    || ((this.selectionStart == readOnlyLength + 1) && (event.which == 8)))) {
+                    return false;
+                }
+
+                if ((event.which == 37 || event.which == 39) && (readOnlyLength == 3 || readOnlyLength == 4 || readOnlyLength == 5)) {
+                    return false;
+                }
+
+            });
+
+            function ValidateForm() {
+
+
+
+
+                var errorClass = "validation_error";
+                //var residential = $("#chkResidential");
+                //var hotel = $("#chkHotel");
+                //var commercial = $("#chkCommercial");
+                //var retailNEntertainment = $("#chkRetailAndEntertainment");
+                var title = $("#cbo-title");
+                // var fullName = $("#txtFullName");
+
+                var txtFirstName = $("#txtFirstName");
+                var txtLastName = $("#txtLastName");
+
+                var country = $("#cbo-country");
+                var email = $("#txtEmail");
+                var mobileNumber = $("#txtMobileNumber");
+
+                var nationality = $("#cbo-nationality");
+                var unittype = $("#cbo-unittype");
+                var bedroom1 = $("#chkBedroom1");
+                var bedroom2 = $("#chkBedroom2");
+                var bedroom3 = $("#chkBedroom3");
+                var Studio = $("#Studio");
+                var Penthouse = $("#Penthouse");
+                var websearch = $("#chkWebsearch");
+                var salesteam = $("#chkSalesTeam");
+                var magazine = $("#chkmagazine");
+                var online = $("#chkonline");
+                var socialmedia = $("#chkSocialMedia");
+                var other = $("#chkOther");
+
+                var hearaboutus = $('#hearaboutus .check-box-wrapper label');
+                var bedrooms = $('#bedrooms .check-box-wrapper label');
+                var residencetype = $('#residence-type .check-box-wrapper label');
+
+                var lblResidential = $("#lblResidential");
+                var lblHotel = $("#lblHotel");
+                var lblCommercial = $("#lblCommercial");
+                var lblRetail = $("#lblRetail");
+                var lblTitle = $("#lbltitle");
+                //  var lblFullName = $("#lblFullName");
+
+                var lblFirstName = $("#lblFirstName");
+                var lblLastName = $("#lblLastName");
+
+                var lblCountry = $("#lblCountry");
+                var lblEmail = $("#lblEmail");
+                var lblMobile = $("#lblMobile");
+
+                var lblNationality = $("#lblNationality");
+                var lblunittype = $("#lblunittype");
+                var lblBedroom1 = $("#lblBedroom1");
+                var lblBedroom2 = $("#lblBedroom2");
+                var lblBedroom3 = $("#lblBedroom3");
+                var lblStudio = $("#lblStudio");
+                var lblPenthouse = $("#lblPenthouse");
+                var lblWebsearch = $("#lblWebsearch");
+                var lblSalesTeam = $("#lblSalesTeam");
+                var lblmagazine = $("#lblmagazine");
+                var lblonline = $("#lblonline");
+                var lblSocialMedia = $("#lblSocialMedia");
+
+
+                var lblOther = $("#lblOther");
+
+                var otherfield = $("#otherfield");
+                var txtotherfield = $("#txtotherfield");
+
+                var isValid = true;
+
+                var recapchaWidget = $('#recapchaWidget');
+
+                if (IsRecapchaValid()) {
+                    recapchaWidget.removeClass(errorClass);
+                    isValid = true;
+                }
+                else {
+                    recapchaWidget.addClass(errorClass);
+                    isValid = false;
+                }
+
+                //var isAllCheckBoxEmpty = ValidateCheckBox(lblResidential, residential) || ValidateCheckBox(lblHotel, hotel) || ValidateCheckBox(lblCommercial, commercial) || ValidateCheckBox(lblRetail, retailNEntertainment);
+                //isValid = isAllCheckBoxEmpty && isValid;
+
+                //if (!isAllCheckBoxEmpty) {
+                //    SetCheckBoxErrorClass(residencetype);
+                //}
+                //else {
+                //    RemoveCheckBoxErrorClass(residencetype);
+                //}
+
+                var isAllBedroomCheckBoxEmpty = ValidateCheckBox(lblBedroom1, bedroom1) || ValidateCheckBox(lblBedroom2, bedroom2) || ValidateCheckBox(lblBedroom3, bedroom3) || ValidateCheckBox(lblStudio, Studio) || ValidateCheckBox(lblPenthouse, Penthouse);
+
+                isValid = isAllBedroomCheckBoxEmpty && isValid;
+
+                if (!isAllBedroomCheckBoxEmpty) {
+                    SetCheckBoxErrorClass(bedrooms);
+                }
+                else {
+                    RemoveCheckBoxErrorClass(bedrooms);
+                }
+
+
+                var otherValid = false;
+                var otherFieldValid = false;
+
+                if (ValidateCheckBox(lblOther, other)) {
+
+                    otherFieldValid = ValidateText(lblOther, txtotherfield);
+                    otherValid = true;
+                }
+                else {
+                    otherValid = false;
+                }
+
+                var isAllHearAboutUsCheckBoxEmpty = ValidateCheckBox(lblWebsearch, websearch) || ValidateCheckBox(lblSalesTeam, salesteam) || ValidateCheckBox(lblmagazine, magazine) || ValidateCheckBox(lblonline, online) || ValidateCheckBox(lblSocialMedia, socialmedia) || otherValid;
+
+                isValid = isAllHearAboutUsCheckBoxEmpty && isValid;
+
+
+                if (!isAllHearAboutUsCheckBoxEmpty) {
+                    SetCheckBoxErrorClass(hearaboutus);
+                }
+                else {
+                    if (otherValid) {
+                        if (otherFieldValid) {
+                            txtotherfield.removeClass("validation_error");
+                            RemoveCheckBoxErrorClass(hearaboutus);
+                        }
+                        else {
+                            txtotherfield.addClass("validation_error");
+                            SetCheckBoxErrorClass(hearaboutus);
+                        }
+                    }
+                    else {
+                        txtotherfield.removeClass("validation_error");
+                        RemoveCheckBoxErrorClass(hearaboutus);
+                    }
+                }
+
+                isValid = ValidateDropDown(lblTitle, title) && isValid;
+                //  isValid = ValidateText(lblFullName, fullName) && isValid;
+
+                isValid = ValidateText(lblFirstName, txtFirstName) && isValid;
+                isValid = ValidateText(lblLastName, txtLastName) && isValid;
+
+                isValid = ValidateDropDown(lblCountry, country) && isValid;
+                isValid = ValidateEmail(lblEmail, email) && isValid;
+                isValid = ValidatePhoneNumber(lblMobile, mobileNumber) && isValid;
+                isValid = ValidateDropDown(lblNationality, nationality) && isValid;
+                isValid = ValidateDropDown(lblunittype, unittype) && isValid;
+
+
+
+
+                if (!isValid) {
+                    $("#errorMessage").show();
+
+                    $("#errorMessage").css("color", "red");
+                }
+                else {
+                    POSTMethodCall();
+                    $("#errorMessage").hide();
+                }
+
+
+                return isValid;
+            }
+        </script>
+    }
+
+
+
+    <section>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script>
+            var myCenter = new google.maps.LatLng(26.304044, 50.644462);
+
+            function initialize() {
+                var mapProp = {
+                    center: myCenter,
+                    zoom: 10,
+                    minZoom: 2,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var map = new google.maps.Map(document.getElementById("map-canvas"), mapProp);
+
+                var marker = new google.maps.Marker({
+                    position: myCenter,
+                });
+
+                marker.setMap(map);
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        @{
+
+
+            if (isMapRequired == "1")
+            {
+
+                <div id="map-canvas"></div>
+
+            }
+        }
+    </section>
+    <!--main-->
+
+}
+
+
+@Html.Partial("_OtherFeatures")
+
+
+

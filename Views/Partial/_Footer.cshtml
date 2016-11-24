@@ -1,0 +1,256 @@
+﻿
+
+@{
+     
+    string LogoImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/generic/eagle-hills-logo-ar.jpg" : "~/Common/img/generic/eagle-logo.png";
+}
+
+<footer>
+    <div class="site-map-wrapper">
+        <div class="site-map">
+            <div class="footer-left-panel">
+                <div class="bottom-nav-menu">
+                    <ul class="bottom-nav-main-menu">
+                        <li>
+                            <a href="@Url.Action("the-destination", "FrontEnd")">@Html.Raw(Resources.Master.TheDestination)</a>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("the-destination", "FrontEnd")#the-destination-1">@Html.Raw(Resources.Master.IdeallyLocated)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("the-destination", "FrontEnd")#the-destination-2">@Html.Raw(Resources.Master.SustainableDesignNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("the-destination", "FrontEnd")#the-destination-3">@Html.Raw(Resources.Master.SmartUrbanPlanningNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("the-destination", "FrontEnd")#the-destination-4">@Html.Raw(Resources.Master.GreenSpacesAndPark)</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Residences","FrontEnd")">@Html.Raw(Resources.Master.Residences)</a>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Residences", "FrontEnd")#residence-1">@Html.Raw(Resources.Master.ALifeStyleForEveryoneNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Residences", "FrontEnd")#residence-2">@Html.Raw(Resources.Master.MarassiResidences)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Residences", "FrontEnd")#residence-3">@Html.Raw(Resources.Master.TheAddressServicedApartmentsNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Residences", "FrontEnd")#residence-4">@Html.Raw(Resources.Master.VidaServicedApartmentsNav)</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Retail", "FrontEnd")">@Html.Raw(Resources.Master.Retail)</a>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Retail", "FrontEnd")#retail-1">@Html.Raw(Resources.Master.RetailPromenadeNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Retail", "FrontEnd")#retail-2">@Html.Raw(Resources.Master.EntertainmentItsBestNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Retail", "FrontEnd")#retail-3">@Html.Raw(Resources.Master.ShoppingCentre)</a>
+                                </li>
+                               <li>
+                                    <a href="@Url.Action("Retail", "FrontEnd")#retail-4">@Html.Raw(Resources.Master.WaterfrontRetail)</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Hospitality", "FrontEnd")">@Html.Raw(Resources.Master.Hospitality)</a>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Hospitality", "FrontEnd")#hospitality-1">@Html.Raw(Resources.Master.TheAddressHotelResortNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Hospitality", "FrontEnd")#hospitality-2">@Html.Raw(Resources.Master.ExperienceEleganceClassNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Hospitality", "FrontEnd")#hospitality-3">@Html.Raw(Resources.Master.VidaHotelResortNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Hospitality", "FrontEnd")#hospitality-4">@Html.Raw(Resources.Master.ExperienceThePlaceToBeNav)</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!--
+                        <li>
+                            <a href="@Url.Action("office-district","FrontEnd")">@Html.Raw(Resources.Master.OfficeDistrict)</a>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("office-district","FrontEnd")#office-1">@Html.Raw(Resources.Master.OfficeDistrictNav)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("office-district","FrontEnd")#office-2">@Html.Raw(Resources.Master.IdeallyLocatedNav)</a>
+                                </li>
+                            </ul>
+                        </li>
+                        -->
+                        
+                        <li>
+                            <a href="@Url.Action("about-us","FrontEnd")">@Html.Raw(Resources.Master.AboutUs)</a>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("about-us","FrontEnd")#about-us-1">@Html.Raw(Resources.Master.AboutDiyarAlMuharraq)</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("about-us","FrontEnd")#about-us-2">@Html.Raw(Resources.Master.AboutEagleHills)</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                           <a href="@Url.Action("Careers","FrontEnd")">@Html.Raw(Resources.Master.CareersNav)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <a href="http://www.eaglehills.com/" target="_blank">
+                    <img src="@Url.Content(LogoImageUrl)" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom-panel">
+            <div class="bottom-social">
+              <ul>
+                 <li>
+                     <a href="tel:800 98888" title="toll free: 800 98888">
+                         <img src="@Url.Content("~/Common/img/generic/call.gif")" alt="" />
+                     </a>
+                 </li>                
+                  <li class="email-div-wrapper">
+                     <a href="mailto:info@marassialbahrain.com">
+                         <img src="@Url.Content("~/Common/img/generic/mail.gif")" alt="" />
+                     </a>
+                 </li>
+                 <li>
+                     <a href="@Url.Action("contact","FrontEnd")#map-canvas">
+                         <img src="@Url.Content("~/Common/img/generic/locate.gif")" alt="" />
+                     </a>
+                 </li>
+                 <li>
+                  <a href="https://www.facebook.com/marassialbahrain" target="_blank">
+                      <img src="@Url.Content("~/Common/img/generic/fb.gif")" alt="" />
+                  </a>
+              </li>
+              <li>
+                  <a href="https://twitter.com/MarassiBahrain" target="_blank">
+                      <img src="@Url.Content("~/Common/img/generic/twitter.gif")" alt="" />
+                  </a>
+              </li>
+              <li>
+                  <a href="http://instagram.com/marassialbahrain/" target="_blank">
+                      <img src="@Url.Content("~/Common/img/generic/insta.gif")" alt="" />
+                  </a>
+              </li>
+             </ul>
+            </div>
+            <div class="copy-rights">
+                <p>@Html.Raw(Resources.Master.CopyRight)</p>
+                <ul>
+                    <li>
+                        <a href="@Url.Action("TermsAndCondition","FrontEnd")">@Html.Raw(Resources.Master.TermsAndCondition)</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("PrivacyPolicy","FrontEnd")">@Html.Raw(Resources.Master.PrivacyPolicy)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Mobile Sitemap-->
+    <div class="site-map-wrapper-mobile">
+        <div class="site-map-wrapper-mobile-left">
+            <ul>
+                <li>
+                    <a href="@Url.Action("the-destination","FrontEnd")">@Html.Raw(Resources.Master.TheDestination)</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Retail","FrontEnd")">@Html.Raw(Resources.Master.Retail)</a>
+                </li>
+                
+                <!--
+                <li>
+                    <a href="@Url.Action("office-district","FrontEnd")">@Html.Raw(Resources.Master.OfficeDistrict)</a>
+                </li>
+                -->
+                
+                <li>
+                   <a href="@Url.Action("Careers","FrontEnd")">@Html.Raw(Resources.Master.CareersNav)</a>
+                </li>
+            </ul>
+        </div>
+        <div class="site-map-wrapper-mobile-right">
+            <ul>
+                <li>
+                    <a href="@Url.Action("Residences","FrontEnd")">@Html.Raw(Resources.Master.Residences)</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Hospitality","FrontEnd")">@Html.Raw(Resources.Master.Hospitality)</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("about-us","FrontEnd")">@Html.Raw(Resources.Master.AboutUs)</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom-panel">
+            <ul>
+                <li>
+                    <a href="tel:98888 800" title="toll free: 98888 800">
+                        <img src="@Url.Content("~/Common/img/call-1.gif")" alt="" />
+                    </a>
+                </li>
+                 <li class="email-div-wrapper email-div-wrapper-mobile">
+                 	<a href="mailto:info@marassialbahrain.com">
+                   <img src="@Url.Content("~/Common/img/mail-1.gif")" alt="" />
+                  </a>     
+                        <!--
+                        <div class="emails-div">
+                         <a href="mailto:info@marassialbahrain.com">info@marassialbahrain.com</a><br />
+                         <a href="mailto:media@marassialbahrain.com">media@marassialbahrain.com</a>
+                        </div>
+                        -->
+                </li>
+                <li>
+                    <a href="@Url.Action("contact","FrontEnd")#map-canvas">
+                        <img src="@Url.Content("~/Common/img/locate-1.gif")" alt="" />
+                    </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/marassialbahrain" target="_blank">
+                      <img src="@Url.Content("~/Common/img/generic/fb-mob.gif")" alt="" />
+                  </a>
+              </li>
+              <li>
+                  <a href="https://twitter.com/MarassiBahrain" target="_blank">
+                      <img src="@Url.Content("~/Common/img/generic/twitter-mob.gif")" alt="" />
+                  </a>
+              </li>
+              <li>
+                  <a href="http://instagram.com/marassialbahrain/" target="_blank">
+                      <img src="@Url.Content("~/Common/img/generic/insta-mob.gif")" alt="" />
+                  </a>
+              </li>
+            </ul>
+            <div class="copy-rights">
+                <p>@Html.Raw(Resources.Master.CopyRight)</p>
+                <ul class="bottom-nav">
+                    <li>
+                        <a href="@Url.Action("TermsAndCondition","FrontEnd")">@Html.Raw(Resources.Master.TermsAndCondition)</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("PrivacyPolicy","FrontEnd")">@Html.Raw(Resources.Master.PrivacyPolicy)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Mobile Sitemap-->
+</footer>

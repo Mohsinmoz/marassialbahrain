@@ -1,0 +1,209 @@
+﻿@model User
+@{
+    List<SelectListItem> countries = ViewBag.CountryList as List<SelectListItem>;
+
+    string validationMessage = TempData["formMessage"] as string;
+    TempData["formMessage"] = null;
+
+    List<SelectListItem> titleList = new List<SelectListItem>();
+    titleList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.SelectCountry).ToString(), Value = "--", Selected = true });
+    titleList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.TitleMr).ToString(), Value = @Html.Raw(Resources.Master.TitleMr).ToString(), Selected = false });
+    titleList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.TitleMs).ToString(), Value = @Html.Raw(Resources.Master.TitleMs).ToString(), Selected = false });
+    titleList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.TitleMrs).ToString(), Value = @Html.Raw(Resources.Master.TitleMrs).ToString(), Selected = false });
+    titleList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.TitleDr).ToString(), Value = @Html.Raw(Resources.Master.TitleDr).ToString(), Selected = false });
+
+    //List<SelectListItem> unittypeList = new List<SelectListItem>();
+    //unittypeList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.SelectCountry).ToString(), Value = "--", Selected = true });
+    //unittypeList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.TypeA).ToString(), Value = @Html.Raw(Resources.Master.TypeA).ToString(), Selected = false });
+    //unittypeList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.TypeB).ToString(), Value = @Html.Raw(Resources.Master.TypeB).ToString(), Selected = false });
+    //unittypeList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.TypeC).ToString(), Value = @Html.Raw(Resources.Master.TypeC).ToString(), Selected = false });
+
+
+    List<SelectListItem> unittypeList = new List<SelectListItem>();
+    unittypeList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.SelectCountry).ToString(), Value = "--", Selected = true });
+
+    unittypeList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.Apartments).ToString(), Value = @Html.Raw(Resources.Master.Apartments).ToString(), Selected = false });
+    unittypeList.Add(new SelectListItem { Text = @Html.Raw(Resources.Master.ServicedApartments).ToString(), Value = @Html.Raw(Resources.Master.ServicedApartments).ToString(), Selected = false });
+    
+}
+<div class="contact-from-wrapper">
+    @using (Html.BeginForm("Contact", "FrontEnd", FormMethod.Post, new { @class = "contact-us-form", @autocomplete = "off" }))
+    {
+          @Html.AntiForgeryToken()
+        
+        <p id="errorMessage" >@validationMessage</p>@*
+        <h1>
+            @Html.Raw(Resources.Master.IamInterestedIn)
+        </h1>
+        @Html.AntiForgeryToken()
+        <fieldset id="residence-type" class="residence-type">
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Residential", new { @id = "chkResidential" })
+                <label for="Residential" id="lblResidential">
+                    @Html.Raw(Resources.Master.Residential)
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Hotel", new { @id = "chkHotel" })
+                <label for="Hotel" id="lblHotel">
+                    @Html.Raw(Resources.Master.Hotel)
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Commercial", new { @id = "chkCommercial" })
+                <label for="Commercial" id="lblCommercial">
+                    @Html.Raw(Resources.Master.Commercial)
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("RetailAndEntertainment", new { @id = "chkRetailAndEntertainment" })
+                <label for="RetailAndEntertainment" id="lblRetail">
+                    @Html.Raw(Resources.Master.RetailAndEntertainment)
+                </label>
+            </div>
+        </fieldset>*@
+        
+        
+        <fieldset id="country">
+            <label id="lbltitle">
+                @Html.Raw(Resources.Master.Title)
+            </label>
+            @Html.DropDownListFor(x => x.Title, titleList, new { @id = "cbo-title" })
+        </fieldset>
+       
+         <fieldset id="full-name">
+            <label id="lblFirstName">
+                @Html.Raw(Resources.Master.FirstName)
+            </label>
+            @Html.TextBoxFor(x => x.FirstName, new { @id = "txtFirstName", @maxlength = "50", @onkeypress = "return ValidateCharacter(event)" })
+        </fieldset>
+        
+         <fieldset id="full-name">
+            <label id="lblLastName">
+                @Html.Raw(Resources.Master.LastName)
+            </label>
+            @Html.TextBoxFor(x => x.LastName, new { @id = "txtLastName", @maxlength = "50", @onkeypress = "return ValidateCharacter(event)" })
+        </fieldset>
+        
+        
+        <fieldset id="country">
+            <label id="lblCountry">
+                @Html.Raw(Resources.Master.Country)
+            </label>
+            @Html.DropDownListFor(x => x.Country, countries, new { @id = "cbo-country" })
+        </fieldset>
+        <fieldset id="email-id">
+            <label id="lblEmail">
+                @Html.Raw(Resources.Master.Email)
+            </label>
+            @Html.TextBoxFor(x => x.Email, new { @id = "txtEmail" })
+        </fieldset>
+        <fieldset id="country-flags">
+            <label id="lblMobile">
+                @Html.Raw(Resources.Master.Mobile)
+            </label>
+            @Html.TextBoxFor(x => x.Mobile, new { @type = "tel", @placeholder = "e.g. +1 702 123 4567", @id = "txtMobileNumber", @maxlength = "15", @onkeypress = "return ValidateNumber(event)" })
+        </fieldset>
+        <fieldset id="country">
+            <label id="lblNationality">
+                @Html.Raw(Resources.Master.Nationality)
+            </label>
+            @Html.DropDownListFor(x => x.Nationality, countries, new { @id = "cbo-nationality" })
+        </fieldset>
+        
+      
+        <fieldset id="country">
+            <label id="lblunittype">
+                @Html.Raw(Resources.Master.UnitType)
+            </label>
+            @Html.DropDownListFor(x => x.UnitType, unittypeList, new { @id = "cbo-unittype" })
+        </fieldset>
+
+        <h1>
+            @Html.Raw(Resources.Master.Bedrooms)
+        </h1>
+        <fieldset id="bedrooms" class="residence-type">
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Bedroom1", new { @id = "chkBedroom1" })
+                <label for="Bedroom1" id="lblBedroom1">
+                    @Html.Raw(Resources.Master.Bedroom1)
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Bedroom2", new { @id = "chkBedroom2" })
+                <label for="Bedroom1" id="lblBedroom2">
+                    @Html.Raw(Resources.Master.Bedroom2)
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Bedroom3", new { @id = "chkBedroom3" })
+                <label for="Bedroom1" id="lblBedroom3">
+                    @Html.Raw(Resources.Master.Bedroom3)
+                </label>
+            </div>
+
+        </fieldset>
+
+        <h1>
+            @Html.Raw(Resources.Master.HearAboutUs)
+        </h1>
+        <fieldset id="hearaboutus" class="residence-type">
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Websearch", new { @id = "chkWebsearch" })
+                <label for="Websearch" id="lblWebsearch">
+                    @Html.Raw(Resources.Master.Websearch)
+
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("SalesTeam", new { @id = "chkSalesTeam" })
+                <label for="SalesTeam" id="lblSalesTeam">
+                    @Html.Raw(Resources.Master.SalesTeam)
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("MagazineNewspaper", new { @id = "chkmagazine" })
+                <label for="MagazineNewspaper" id="lblmagazine">
+
+                    @Html.Raw(Resources.Master.MagazineNewspaper)
+
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Onlineadvertising", new { @id = "chkonline" })
+                <label for="Onlineadvertising" id="lblonline">
+                    @Html.Raw(Resources.Master.Onlineadvertising)
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("SocialMedia", new { @id = "chkSocialMedia" })
+                <label for="SocialMedia" id="lblSocialMedia">
+                    @Html.Raw(Resources.Master.SocialMedia)
+                </label>
+            </div>
+            <div class="check-box-wrapper">
+                @Html.CheckBox("Other", new { @id = "chkOther" })
+                <label for="Other" id="lblOther">
+                    @Html.Raw(Resources.Master.Other)
+                </label>
+            </div>
+        </fieldset>
+        <fieldset id="textfieldother" class="textfieldother">
+            <input type="text" id="txtotherfield" disabled="disabled" name="txtotherfield" onkeypress="return ValidateCharacter(event)" />
+        </fieldset>
+
+
+        <div id="recapchaWidget" class="g-recaptcha error-code-style"></div>
+
+        <div class="submit-reset-buttons">
+            <input type="submit" value="@Html.Raw(Resources.Master.Submit)" onclick="return ValidateForm()">
+            <input type="reset" value="@Html.Raw(Resources.Master.Cancel)" id="cancel-btn">
+        </div>
+
+    }
+    <p>
+          @Html.Raw(Resources.Master.TollFree)
+
+      
+    </p>
+</div>

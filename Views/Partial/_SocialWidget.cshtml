@@ -1,0 +1,51 @@
+﻿@{
+     
+    string ContactUsURL = Settings.Culture.Equals("ar") ? "~/ar/contact" : "~/en/contact";
+}
+
+
+<div class="sticky-container">
+		<ul class="sticky">
+			<li>
+				<a href="@Url.Content(ContactUsURL)">
+				 <img width="28" height="26" title="" alt="" src="/Common/img/generic/register.png">
+				 <p>
+				 
+				  @Html.Raw(Resources.Master.RegisterYourInterest)
+				 </p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+<!--
+<div class="sticky-social">
+    <ul>
+        <li>
+            <a href="https://www.facebook.com/marassialbahrain" target="_blank">
+                <img src="@Url.Content("~/Common/img/sticky-fb.gif")" alt="" />
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com/MarassiBahrain" target="_blank">
+                <img src="@Url.Content("~/Common/img/sticky-twitter.gif")" alt="" />
+            </a>
+        </li>
+        <li>
+            <a href="http://instagram.com/marassialbahrain/" target="_blank">
+                <img src="@Url.Content("~/Common/img/sticky-insta.gif")" alt="" />
+            </a>
+        </li>
+        <li>
+            <a href="mailto:info@marassialbahrain.com">
+                <img src="/Common/img/mail-2.gif" alt="" />
+            </a>
+        </li>
+        <li>
+            <a href="tel:800 98888" title="toll free: 800 98888">
+                <img src="/Common/img/call-2.gif" alt="" />
+            </a>
+        </li>
+    </ul>
+</div>
+-->

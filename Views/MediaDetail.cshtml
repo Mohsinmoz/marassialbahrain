@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Marrasi Al Bahrain - Media Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--banner-->
+<div class="banner-wrapper">
+    <img src="@Url.Content("~/Common/img/media/media-details-banner-desktop.jpg")" alt="" />
+</div>
+<!--banner-->
+@Html.Partial("_SocialWidget")
+<!--main-->
+<section>
+    <article>
+        <div class="article-title">
+            <h3>
+                This an Article <span>Title</span>
+            </h3>
+            <p>
+                By Name Surname 5th January 2015
+            </p>
+        </div>
+        <div class="article-copy">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae maximus augue. Sed fermentum arcu in risus pharetra, in interdum ligula iaculis. Suspendisse blandit augue eget elit sagittis, eu iaculis nulla faucibus. Curabitur efficitur mi quis risus vulputate, in euismod urna ullamcorper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam accumsan tortor nec mauris condimentum, sed volutpat est hendrerit. Pellentesque metus elit, convallis tempus feugiat vel, condimentum id nulla. Aliquam elementum aliquet est. Suspendisse nec velit purus. Ut ultrices aliquam bibendum. Proin efficitur vel magna in tincidunt. Donec at turpis ex. Praesent luctus, orci non pretium mattis, mauris leo feugiat mi, ut accumsan nunc neque et lacus. Fusce sodales convallis tellus, ut commodo enim commodo sed. Duis semper metus sit amet mauris vulputate imperdiet non non sem.
+            </p>
+            <p>
+                Curabitur at dui ex. Etiam quis dolor a enim commodo vestibulum. Nam facilisis tortor ac erat commodo fermentum. Maecenas auctor placerat euismod. Vivamus in porta risus. Ut pretium sem sit amet turpis maximus elementum. Aliquam molestie porta eros vitae placerat. Aliquam molestie nisl vitae quam facilisis, non maximus ipsum feugiat. Ut efficitur ligula a quam pharetra suscipit sed semper lectus. Donec varius nunc vel sagittis accumsan. Pellentesque auctor ex id turpis tempor tempor in eu orci.
+            </p>
+            <p>
+                Praesent sollicitudin tincidunt dictum. Morbi sodales nulla enim, vitae tempus sem ornare et.
+            </p>
+            <p>
+                Integer turpis libero, porta vitae velit ac, congue lacinia velit. Ut facilisis molestie neque, non posuere eros rhoncus auctor. Sed elementum fringilla risus id ultricies. Suspendisse potenti. Praesent ac nibh suscipit, porttitor nibh ac, hendrerit leo. Ut efficitur euismod metus ac fringilla. Quisque varius metus nunc, in pulvinar nulla vestibulum vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean vel mattis eros, sed luctus nibh. Vestibulum diam augue, pellentesque feugiat nunc a, maximus dapibus enim. Nunc vehicula quam turpis. Nunc eget eros ut metus congue maximus vel eu dolor. Nulla urna diam, maximus quis nulla vitae, dictum posuere ligula. Quisque sed nibh libero. Proin suscipit at nisl a facilisis.
+            </p>
+            <p>
+                Praesent at facilisis metus. Suspendisse potenti. Nunc scelerisque diam ac aliquam faucibus. Nunc laoreet lacus sit amet nisi malesuada sollicitudin. Morbi tincidunt eros est, id dignissim enim ultricies et.
+            </p>
+        </div>
+    </article>
+</section>
+<section>
+    <article>
+        <div class="other-properties-wrapper">
+            <h2>
+                Other <span>Properties</span>
+            </h2>
+            <ul>
+                <li>
+                    <img src="@Url.Content("~/Common/img/retail/offices-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy destination">
+                        <h2>The Destination</h2>
+                        <a href="@Url.Action("the-destination","FrontEnd")">
+                            <img src="@Url.Content("~/Common/img/learn-more.png")" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/retail/retail-mall-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy retail-mall">
+                        <h2>Retail</h2>
+                        <a href="@Url.Action("Retail","FrontEnd")">
+                            <img src="@Url.Content("~/Common/img/learn-more.png")" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/retail/Hotels-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy hotels">
+                        <h2>Hospitality</h2>
+                        <a href="@Url.Action("Hospitality","FrontEnd")">
+                            <img src="@Url.Content("~/Common/img/learn-more.png")" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+<!--main--> 

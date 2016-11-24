@@ -1,0 +1,57 @@
+﻿@model User
+@{
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase() + "-" + Resources.Master.ContactUs.RemoveHtmlTags().ToTitleCase();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    bool status = Convert.ToBoolean(TempData["Status"]);
+    TempData["Status"] = null;
+}
+@section styles{
+    <link rel="stylesheet" href="@Url.Content("~/Common/css/intlTelInput.css")">
+}
+<!--banner-->
+<div class="banner-wrapper">
+    <img src="@Url.Content("~/Common/img/retail/retail-banner-desktop.jpg")" alt="" />
+    <!--
+    <div class="banner-caption-wrapper">
+        <div class="banner-caption contact-page">
+            <div class="banner-caption-border">
+                
+            </div>
+        </div>
+    </div>-->
+</div>
+<!--banner-->
+@Html.Partial("_SocialWidget")
+<!--main-->
+<section>
+ <div class="careers-page">
+  <h3>@Html.Raw(Resources.Master.Careers)</h3>
+  @Html.Raw(Resources.Master.CareerDescription)
+ </div>
+</section>
+<section>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        var myCenter = new google.maps.LatLng(26.304044, 50.644462);
+
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 10,
+                minZoom: 2,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapProp);
+
+            var marker = new google.maps.Marker({
+                position: myCenter,
+            });
+
+            marker.setMap(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <div id="map-canvas"></div>
+</section><!--main-->

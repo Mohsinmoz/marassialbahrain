@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase() + "-" + Resources.Master.AboutUs.RemoveHtmlTags().ToTitleCase();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string learnMoreImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/learn-more-ar.png" : "~/Common/img/learn-more.png";
+}
+
+<!--banner-->
+<div class="banner-wrapper">
+    <img src="@Url.Content("~/Common/img/about-us/about-us-banner-desktop.jpg")" alt="" />
+    <div class="banner-caption-wrapper">
+        <div class="banner-caption banner-about" id="about-us-1">
+          <h3>
+              @Html.Raw(Resources.Master.AboutThePartnerShip)
+          </h3>
+          <p id="about-us-1">
+              @Html.Raw(Resources.Master.AboutThePartnerShipDescription)
+          </p>
+      </div>
+    </div>
+</div>
+<!--banner-->
+@Html.Partial("_SocialWidget")
+<!--main-->
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-about">
+            <div class="property-specs-copy-right">
+                <h3>
+                    <a href="@(Settings.Culture.Equals("ar") ? "http://www.diyar.bh/ar " : "http://www.diyar.bh/en ")">
+                        @Html.Raw(Resources.Master.AboutDiyarAlMuharraq)
+                    </a>
+                </h3>
+                <p>
+                    <a href="@(Settings.Culture.Equals("ar") ? "http://www.diyar.bh/ar " : "http://www.diyar.bh/en ")">
+                        @Html.Raw(Resources.Master.AboutDiyarAlMuharraqDescription)
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="about-us-2">
+            <a href="@(Settings.Culture.Equals("ar") ? "http://www.diyar.bh/ar " : "http://www.diyar.bh/en ")">
+                <figure><img src="@Url.Content("~/Common/img/about-us/villa-type-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="hover01 column-right">
+            <a href="http://www.eaglehills.com">
+                <figure><img src="@Url.Content("~/Common/img/about-us/aprtment-type-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="tile-type-left bg-color-about-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    <a href="http://www.eaglehills.com">
+                        @Html.Raw(Resources.Master.AboutEagleHills)
+                    </a>
+                </h3>
+                <p>
+                    <a href="http://www.eaglehills.com">
+                        @Html.Raw(Resources.Master.AboutEagleHillsDescription)
+                    </a>
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-about">
+            <div class="property-specs-copy-right">
+                <h3>
+                    <a href="@(Settings.Culture.Equals("ar") ? "http://www.diyar.bh/ar" : "http://www.diyar.bh/en")">
+                        @Html.Raw(Resources.Master.AboutDiyarAlMuharraq)
+                    </a>
+                </h3>
+                <p>
+                    <a href="@(Settings.Culture.Equals("ar") ? "http://www.diyar.bh/ar" : "http://www.diyar.bh/en")">
+                        @Html.Raw(Resources.Master.AboutDiyarAlMuharraqDescription)
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="about-us-2">
+            <a href="@(Settings.Culture.Equals("ar") ? "http://www.diyar.bh/ar" : "http://www.diyar.bh/en")">
+                <figure><img src="@Url.Content("~/Common/img/about-us/villa-type-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+        <div class="tile-type-left bg-color-about-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    <a href="http://www.eaglehills.com">
+                        @Html.Raw(Resources.Master.AboutEagleHills)
+                    </a>
+                </h3>
+                <p>
+                    <a href="http://www.eaglehills.com">
+                        @Html.Raw(Resources.Master.AboutEagleHillsDescription)
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+            <a href="http://www.eaglehills.com">
+                <figure><img src="@Url.Content("~/Common/img/about-us/aprtment-type-tile.jpg")" alt="" /></figure>
+            </a>
+        </div>
+    </article>
+</section>
+<section>
+    <article>
+        <div class="other-properties-wrapper other-about">
+            <h2>
+                @Html.Raw(Resources.Master.OtherFeatures)
+            </h2>
+            <ul>
+                <li>
+                    <img src="@Url.Content("~/Common/img/map-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy residences">
+                        <h2>@Html.Raw(Resources.Master.ResidencesFeature.ToTitleCase())</h2>
+                        <a href="contact#map-canvas">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/retail-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy retail-mall">
+                        <h2>@Html.Raw(Resources.Master.Retail.ToTitleCase())</h2>
+                        <a href="@Url.Action("Retail", "FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/hotels-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy hotels">
+                        <h2>@Html.Raw(Resources.Master.Hospitality.ToTitleCase())</h2>
+                        <a href="@Url.Action("Hospitality", "FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+<!--main-->

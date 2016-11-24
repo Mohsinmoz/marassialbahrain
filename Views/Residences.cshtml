@@ -1,0 +1,243 @@
+﻿
+@{
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase() + "-" + Resources.Master.Residences.RemoveHtmlTags().ToTitleCase();
+ 
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string learnMoreImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/learn-more-ar.png" : "~/Common/img/learn-more.png";
+    
+    string findOutImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/find-out-more-ar.png" : "~/Common/img/find-out-more.png";
+}
+
+<!--banner-->
+<div class="banner-wrapper">
+    <img src="@Url.Content("~/Common/img/residential/residential-banner-1-desktop.jpg")" alt="" />
+    <div class="banner-caption-wrapper">
+        <div class="banner-caption banner-residences" id="residence-1">
+          <h3>
+              @Html.Raw(Resources.Master.LifeRefined)
+          </h3>
+          <p>
+              @Html.Raw(Resources.Master.LifeRefinedDescription)
+          </p>
+      </div>
+    </div>
+</div>
+<!--banner-->
+@Html.Partial("_SocialWidget")
+
+<!--main-->
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-residences">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.ALifestyleForEveryone)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.ALifestyleForEveryoneDescription)
+                </p>
+            		<a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column" id="residence-2">
+            <figure><img src="@Url.Content("~/Common/img/residential/1-lifestyle-for-everyone.jpg")" alt="" /></figure>
+        </div>
+        <div class="hover01 column-right">
+             <figure><img src="@Url.Content("~/Common/img/residential/2-mall-residences.jpg")" alt="" /></figure>
+        </div>
+     
+
+        <div class="tile-type-left bg-color-residences-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.MarassiResidences)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.MarassiResidencesDescription)
+                </p>
+                <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+         
+
+        <div class="tile-type-right bg-color-residences">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.ALifestyleForEveryone)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.ALifestyleForEveryoneDescription)
+                </p>
+                <a href="@Url.Action("Marassi-Residences","FrontEnd", new {culture= Settings.Culture })">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column" id="residence-2">
+            <figure><img src="@Url.Content("~/Common/img/residential/1-lifestyle-for-everyone.jpg")" alt="" /></figure>
+        </div>
+         
+        <div class="tile-type-left bg-color-residences-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.MarassiResidences)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.MarassiResidencesDescription)
+                </p>
+                <a href="@Url.Action("Marassi-Residences", "FrontEnd", new {culture= Settings.Culture })">
+             			<img src="@Url.Content(findOutImageUrl)" alt="" class="details-btn" />
+            		</a>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+             <figure><img src="@Url.Content("~/Common/img/residential/2-mall-residences.jpg")" alt="" /></figure>
+        </div>
+    </article>
+</section>
+<section>
+ <article>
+  <div class="discover">
+   <iframe src="https://www.youtube.com/embed/IhSm8rPgvqg" frameborder="0" allowFullScreen> </iframe>
+   
+   <!--
+   <video width="1310" poster="/common/videos/poster.jpg" controls="" preload="none">
+    <source src="http://townsquaredubai.com.at.iprox.net/js/build/trimmed-nshama.mp4" type="video/mp4;codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+    <source src="http://townsquaredubai.com.at.iprox.net/js/build/trimmed-nshama.webm" type="video/webm;codecs=&quot;vp8, vorbis&quot;">
+   </video>
+   -->
+   
+  </div>
+ </article>
+</section>
+
+<!--
+<section>
+    <article>
+        <div class="row my-panorama">
+
+            <div class="loader-gif">
+                <img src="@Url.Content("~/Common/img/loader.gif")" alt="" />
+            </div>
+
+            <div class="panaroma-start-button">
+                <div class="button-img">
+                    <img src="@Url.Content("~/Common/img/residential/discover-the-surroundings.jpg")" alt="" />
+                </div>
+            </div>
+
+            <div id="zoom_container">
+                <img id="yourImageID" src="@Url.Content("~/Common/img/HiRes.jpg")" width="5000" height="620" />
+            </div>
+
+        </div>
+    </article>
+</section>
+-->
+
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-residences">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.TheAddressServicedApartments)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.TheAddressServicedApartmentsDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="residence-4">
+            <figure><img src="@Url.Content("~/Common/img/residential/3-the-address.jpg")" alt="" /></figure>
+        </div>
+        <div class="hover01 column-right">
+            <figure><img src="@Url.Content("~/Common/img/residential/4-vida.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-residences-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.VidaServicedApartments)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.VidaServicedApartmentsDescription)
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-residences">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.VidaServicedApartments)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.VidaServicedApartmentsDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="residence-4">
+            <figure><img src="@Url.Content("~/Common/img/residential/3-the-address.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-residences-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.VidaServicedApartments)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.VidaServicedApartmentsDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+            <figure><img src="@Url.Content("~/Common/img/residential/4-vida.jpg")" alt="" /></figure>
+        </div>
+    </article>
+</section>
+
+<section>
+    <article>
+        <div class="other-properties-wrapper other-residences">
+            <h2>
+                @Html.Raw(Resources.Master.OtherFeatures)
+            </h2>
+            <ul>
+                <li>
+                    <img src="@Url.Content("~/Common/img/destination-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy destination">
+                        <h2>@Html.Raw(Resources.Master.Destination.ToTitleCase()) </h2>
+                        <a href="@Url.Action("the-destination", "FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/retail-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy retail-mall">
+                        <h2>@Html.Raw(Resources.Master.Retail.ToTitleCase())</h2>
+                        <a href="@Url.Action("Retail","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/hotels-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy hotels">
+                        <h2>@Html.Raw(Resources.Master.Hospitality.ToTitleCase())</h2>
+                        <a href="@Url.Action("Hospitality","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+<!--main--> 

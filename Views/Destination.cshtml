@@ -1,0 +1,201 @@
+﻿@{
+    ViewBag.Title = Resources.Master.MarassiAlBahrain.RemoveHtmlTags().ToTitleCase() + "-" + Resources.Master.About.RemoveHtmlTags().ToTitleCase();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string learnMoreImageUrl = Settings.Culture.Equals("ar") ? "~/Common/img/learn-more-ar.png" : "~/Common/img/learn-more.png";
+}
+
+<!--banner-->
+<div class="banner-wrapper">
+    <img src="@Url.Content("~/Common/img//destination/retail-banner-desktop.jpg")" alt="" />
+    <div class="banner-caption-wrapper">
+        <div class="banner-caption banner-destination" id="the-destination-1">
+         <h3>
+             @Html.Raw(Resources.Master.MarassiAlBahrain)
+         </h3>
+         <p>
+             @Html.Raw(Resources.Master.MarassiAlBahrainDescription)
+         </p>
+     </div>
+    </div>
+</div>
+<!--banner-->
+@Html.Partial("_SocialWidget")
+
+<!--main-->
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-destination">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.IdeallyLocated)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.IdeallyLocatedDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="the-destination-2">
+            <figure><img src="@Url.Content("~/Common/img/destination/destination-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="hover01 column-right" id="the-destination-3">
+            <figure><img src="@Url.Content("~/Common/img/destination/infrastructure-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-destination-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.SustainableDesign)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.SustainableDesignDescription)
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-destination">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.IdeallyLocated)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.IdeallyLocatedDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="the-destination-2">
+            <figure><img src="@Url.Content("~/Common/img/destination/destination-tile.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-destination-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.SustainableDesign)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.SustainableDesignDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column-right" id="the-destination-3">
+            <figure><img src="@Url.Content("~/Common/img/destination/infrastructure-tile.jpg")" alt="" /></figure>
+        </div>
+    </article>
+</section>
+<section>
+    <article class="desktop-image">
+        <div class="tile-type-right bg-color-destination">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.SmartUrbanPlanning)
+                </h3>
+                <p id="the-destination-3">
+                    @Html.Raw(Resources.Master.SmartUrbanPlanningDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="the-destination-4">
+            <figure><img src="@Url.Content("~/Common/img/destination/destination-tile-2.jpg")" alt="" /></figure>
+        </div>
+        <div class="hover01 column-right">
+            <figure><img src="@Url.Content("~/Common/img/experience-tile-2.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-destination-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.GreenSpacesAndPark)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.GreenSpacesAndParkDescription)
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="mobile-image">
+        <div class="tile-type-right bg-color-destination">
+            <div class="property-specs-copy-right">
+                <h3>
+                    @Html.Raw(Resources.Master.SmartUrbanPlanning)
+                </h3>
+                <p id="the-destination-3">
+                    @Html.Raw(Resources.Master.SmartUrbanPlanningDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column" id="the-destination-4">
+            <figure><img src="@Url.Content("~/Common/img/destination/destination-tile-2.jpg")" alt="" /></figure>
+        </div>
+        <div class="tile-type-left bg-color-destination-left">
+            <div class="property-specs-copy-left">
+                <h3>
+                    @Html.Raw(Resources.Master.GreenSpacesAndPark)
+                </h3>
+                <p>
+                    @Html.Raw(Resources.Master.GreenSpacesAndParkDescription)
+                </p>
+            </div>
+        </div>
+        <div class="hover01 column-right">
+            <figure><img src="@Url.Content("~/Common/img/experience-tile-2.jpg")" alt="" /></figure>
+        </div>
+    </article>
+</section>
+
+<!--
+<section>
+    <article>
+        <div class="row my-panorama">
+            <div class="loader-gif">
+                <img src="@Url.Content("~/Common/img/loader.gif")" alt="" />
+            </div>
+            <div class="panaroma-start-button">
+                <div class="button-img">
+                    <img src="@Url.Content("~/Common/img/panorama-start-button-bg.jpg")" alt="" />
+                </div>
+            </div>
+            <div id="zoom_container">
+                <img id="yourImageID" src="@Url.Content("~/Common/img/HiRes.jpg")" width="5000" height="620" />
+            </div>
+        </div>
+    </article>
+</section>
+-->
+
+<section>
+    <article>
+        <div class="other-properties-wrapper other-destination">
+            <h2>
+                @Html.Raw(Resources.Master.OtherFeatures)
+            </h2>
+            <ul>
+                <li>
+                    <img src="@Url.Content("~/Common/img/hotels-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy hotels">
+                        <h2>@Html.Raw(Resources.Master.Hospitality.ToTitleCase())</h2>
+                        <a href="@Url.Action("Hospitality","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/retail-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy retail-mall">
+                        <h2>@Html.Raw(Resources.Master.Retail.ToTitleCase())</h2>
+                        <a href="@Url.Action("Retail","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="@Url.Content("~/Common/img/residences-tile.jpg")" alt="" />
+                    <div class="other-properties-tile-copy residences">
+                        <h2>@Html.Raw(Resources.Master.Residences.ToTitleCase())</h2>
+                        <a href="@Url.Action("Residences","FrontEnd")">
+                            <img src="@Url.Content(learnMoreImageUrl)" alt="" class="centre-align" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+<!--main-->

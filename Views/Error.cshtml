@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Common/css/style.css")" />
+
+    @if (Settings.Culture == "ar")
+    {
+        <link type="text/css" rel="stylesheet" href="@Url.Content("~/Common/css/style-ar.css")" />
+    }
+</head>
+<body>
+    <div class="error-msg">
+
+        <img class="logo" src="@Url.Content("~/Common/img/mab-logo.gif")" alt="">
+
+        <div class="msg">
+            <img src="@Url.Content("~/Common/img/warning.jpg")" alt="">
+            <h3>@Html.Raw(Resources.Master.SomethingWentWrong)</h3>
+            <p>
+                @Html.Raw(Resources.Master.SomethingWentWrongDescription)
+            </p>
+        </div>
+    </div>
+</body>
+</html>
